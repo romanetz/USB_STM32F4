@@ -1,0 +1,154 @@
+There are two options to support multiple sampling frequencies.
+a) List up available sampling frequencies at Type I format descriptor
+b) Assign an alternate interface to each sampling frequency
+
+Here is the details.
+
+a) Sampling frequencies list on Type I format descriptor
+
+At Type I Format descriptor,
+(1) increase the number of sampling frequencies (bSamFreqType)
+(2) list up available frequencies
+(3) Tune the size of Type I format descriptor, by the increased bytes for frequencies
+(4) Tune wMaxPacketSize of the endpoint descriptor, so that it covers the samples of the greatest frequency
+(5) Set the bit 0 (Sampling Frequency control) of bmAttributes on Audio-Streaming Class-specific (AS-CS) endpoint descriptor.
+(6) Tune the size of wTotalLength field of the Configuration descriptor
+
+usb_descriptor.c
+
+/* Configuration 1 Descriptor */
+ROM BYTE configDescriptor1[]={
+
+    /* USB Microphone Configuration Descriptor */
+    0x09,//sizeof(USB_CFG_DSC),    // Size of this descriptor in bytes
+    USB_DESCRIPTOR_CONFIGURATION,  // CONFIGURATION descriptor type
+    0x6A,0x00,        // Total length of data for this cfg             <----- (6)
+    2,                // Number of interfaces in this cfg
+    1,                // Index value of this configuration
+    0,                // Configuration string index
+    _DEFAULT | _SELF, // Attributes, see usb_device.h
+    50,               // Max power consumption (2X mA)
+        ...
+        ...
+    /*  USB Microphone Type I Format Type Descriptor */
+    0x11,             // Size of the descriptor, in bytes (bLength)    <----- (3)
+    CS_INTERFACE,     // CS_INTERFACE Descriptor Type (bDescriptorType)
+    FORMAT_TYPE,      // FORMAT_TYPE subtype. (bDescriptorSubtype)
+    0x01,             // FORMAT_TYPE_I. (bFormatType)
+    0x01,             // One channel.(bNrChannels)
+    0x02,             // Two bytes per audio subframe.(bSubFrameSize)
+    0x10,             // 16 bits per sample.(bBitResolution)
+    0x03,             // One frequency supported. (bSamFreqType)       <----- (1)
+    0x40,0x1F,0x00,   // 8000Hz. (tSamFreq)                            <----- (2)
+    0x44, 0xAC, 0x00, // tSamFreq (44100Hz)
+    0x80, 0xBB, 0x00, // tSamFreq (48000Hz)
+
+    /*  USB Microphone Standard Endpoint Descriptor */
+    0x09,             // Size of the descriptor, in bytes (bLength)
+    0x05,             // ENDPOINT descriptor (bDescriptorType)
+    0x81,             // IN Endpoint 1. (bEndpointAddress)
+    0x0D,             // Isochronous, Synchronous. (bmAttributes)
+    0x60,0x00,        // 16 bytes per packet (wMaxPacketSize)         <----- (4)
+    0x01,             // One packet per frame.(bInterval)
+    0x00,             // Unused. (bRefresh)
+    0x00,             // Unused. (bSynchAddress)
+
+    /* USB Microphone Class-specific Isoc. Audio Data Endpoint Descriptor*/
+    0x07,             // Size of the descriptor, in bytes (bLength)
+    CS_ENDPOINT,      // CS_ENDPOINT Descriptor Type (bDescriptorType)
+    AS_GENERAL,       // GENERAL subtype. (bDescriptorSubtype)
+    0x01,             // Sampling Frequency control (bmAttributes)    <----- (5)
+    0x00,             // Unused. (bLockDelayUnits)
+    0x00,0x00         // Unused. (wLockDelay)
+};
+
+Seeing the "Sampling Frequency control" attribute at AS-CS endpoint descriptor, the host puts these class-specific requests about the sampling frequency to the target endpoint.
+GET_ and SET_ (CUR, MIN, MAX, RES)
+Here is a snippet to handle these requests,
+
+main.c
+
+#define SMPLFREQ_MINIMUM            8000
+#define SMPLFREQ_MAXIMUM            48000
+#define SMPLFREQ_RESOLUTION         1
+#define SMPLFREQ_DEFAULT            SMPLFREQ_MINIMUM
+
+unsigned long smplFreq_current;
+
+void USBCBInitEP(void)
+{
+    //enable the Audio Streaming(Isochronous) endpoint
+    USBEnableEndpoint(AS_EP ,USB_OUT_ENABLED|USB_IN_ENABLED|USB_DISALLOW_SETUP);
+
+    smplFreq_current = SMPLFREQ_DEFAULT;         // <---- add this line
+}
+
+
+void USBCheckSamplFreqRequest( void );
+
+void USBCBCheckOtherReq(void)
+{
+    USBCheckSamplFreqRequest();     // insert our request handler for the sampling frequency control
+}//end
+
+//
+// Sampling Frequency Control
+//  bmRequestType: 00100010B (SET_), 10100010B (GET_)  Type:class, Recipient:endpoint
+//  bRequest     : GET_ and SET_ (CUR, MIN, MAX, RES)
+//  wValue       : high byte: SAMPLING_FREQ_CONTROL (0x01), low byte: 0
+//  wIndex       ; high byte: 0, lowbyte: target endpoint address (including direction bit)
+//  wLength      : length of frequency value ( 3 bytes )
+//  Data         : sampling frequency in Hz, 3 bytes, little-endian
+//
+
+#define SAMPLING_FREQ_CONTROL       0x01
+#define SAMPLING_FREQ_CONTROL_WLEN  3
+
+#define PUT_SAMPLING_FREQ( buf, value ) buf[0] = ((value) >>  0) & 0x000000FF;\
+                                        buf[1] = ((value) >>  8) & 0x000000FF;\
+                                        buf[2] = ((value) >> 16) & 0x000000FF
+void set_Smpl_Freq_Complete( void );
+
+void USBCheckSamplFreqRequest( void )
+{
+    BYTE processed = TRUE;
+                                      // pick up Sampling Frequency Control request
+    if((SetupPkt.bmRequestType & 0x7F) != (USB_SETUP_TYPE_CLASS | USB_SETUP_RECIPIENT_ENDPOINT) ) return;
+    if( SetupPkt.wValue                != (SAMPLING_FREQ_CONTROL << 8) ) return;
+    if( SetupPkt.wIndex                != (USB_IN_EP | AS_EP)          ) return;
+    if( SetupPkt.wLength               != SAMPLING_FREQ_CONTROL_WLEN   ) return;
+
+    if ( (SetupPkt.bmRequestType & 0x80) == USB_SETUP_DEVICE_TO_HOST ) {
+                                      // send requested sampling frequency to the host
+        switch(SetupPkt.bRequest) {
+            case GET_CUR:  PUT_SAMPLING_FREQ( CtrlTrfData, smplFreq_current );    break;
+            case GET_MIN:  PUT_SAMPLING_FREQ( CtrlTrfData, SMPLFREQ_MINIMUM );    break;
+            case GET_MAX:  PUT_SAMPLING_FREQ( CtrlTrfData, SMPLFREQ_MAXIMUM );    break;
+            case GET_RES:  PUT_SAMPLING_FREQ( CtrlTrfData, SMPLFREQ_RESOLUTION ); break;
+            default:   processed = FALSE;                                         break;
+        }
+        if ( processed )
+            USBEP0SendRAMPtr((BYTE*)CtrlTrfData, SAMPLING_FREQ_CONTROL_WLEN, USB_EP0_NO_OPTIONS);
+
+    } else {
+        switch(SetupPkt.bRequest) {
+            case SET_CUR:             // host want to change sampling frequency
+                USBEP0Receive((BYTE*)CtrlTrfData, SAMPLING_FREQ_CONTROL_WLEN, set_Smpl_Freq_Complete );
+                break;
+            case SET_MIN:
+            case SET_MAX:
+            case SET_RES:
+            default:        break;
+        }
+    }
+}
+                                      // new sampling frequency was set by the host
+void set_Smpl_Freq_Complete( void )
+{
+    smplFreq_current = CtrlTrfData[0] | (CtrlTrfData[1] << 8) | (CtrlTrfData[1] << 16);
+
+    //
+    // check if new frequency is acceptable
+    // and then, switch to new frequency
+    //
+}
