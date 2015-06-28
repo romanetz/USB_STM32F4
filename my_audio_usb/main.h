@@ -58,6 +58,10 @@ void ad9951_init(void);
 void mpx_init(uint8_t L,uint32_t bsize);
 void Delay(__IO uint32_t nTime);
 
+extern float MPX_buf[768] __attribute__ ((aligned(4)));	//4608 bytes MPX signal buffer
+extern uint16_t DAC_buf[768] __attribute__ ((aligned(4)));		//4608 bytes
+extern uint32_t DDS_buf[768] __attribute__ ((aligned(4)));		//4608 bytes
+
 void Sin_Gen (s16 * inbuf,uint32_t sampling_freq,uint32_t freq_left,uint32_t freq_right, uint16_t size);
 
 /* Exported macro ------------------------------------------------------------*/

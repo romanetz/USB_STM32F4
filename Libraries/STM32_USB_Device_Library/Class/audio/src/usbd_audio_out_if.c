@@ -24,14 +24,6 @@
 #include "usbd_audio_out_if.h"
 #include "stm32f4_discovery_audio_codec.h"
 
-const int16_t sinebuf2[96] = {0,0, 4276,4276, 8480,8480, 12539,12539, 16383,16383, 19947,19947, 23169,23169, 25995,25995,
-                             28377,28377, 30272,30272, 31650,31650, 32486,32486, 32767,32767, 32486,32486, 31650,31650, 30272,30272,
-                             28377,28377, 25995,25995, 23169,23169, 19947,19947, 16383,16383, 12539,12539, 8480,8480, 4276,4276,
-                             0,0, -4276,-4276, -8480,-8480, -12539,-12539, -16383,-16383, -19947,-19947, -23169,-23169, -25995,-25995,
-                             -28377,-28377, -30272,-30272, -31650,-31650, -32486,-32486, -32767,-32767, -32486,-32486, -31650,-31650, -30272,-30272,
-                             -28377,-28377, -25995,-25995, -23169,-23169, -19947,-19947, -16383,-16383, -12539,-12539, -8480,-8480, -4276,-4276
-                             };
-
 uint16_t cnt1 =0;
 extern volatile uint8_t audio_buffer_fill;
 extern volatile uint8_t mpx_buff_fill;
@@ -217,34 +209,8 @@ static uint8_t  AudioCmd(uint8_t* pbuf,
     }
    else if (AudioState == AUDIO_STATE_PLAYING)
     	{
-	   /*
-	   if (audio_buffer_fill==1)
-	  	      			{memcpy(Audio,pbuf,size);audio_buffer_fill=0;
-	  	      			};
-	   	if (audio_buffer_fill==2)
-	  	      	    	{memcpy((uint8_t*)Audio+192,pbuf,size);audio_buffer_fill=0;
-	  	      	    	};
-	  	      	    	*/
+
 	   xbuf=pbuf;
-	   /*if (mpx_buff_fill==1)
-	   	  	      			{memcpy(Audio,pbuf,192);xbuf=Audio;//mpx_buffer_fill=0;
-	   	  	      			};
-	   	  	      	if (mpx_buff_fill==2)
-	   	  	      	    	{memcpy((uint8_t*)Audio+192,pbuf,192);xbuf=Audio+192;//mpx_buffer_fill=0;
-	   	  	      	    	};
-	   	  	   	  if (mpx_buff_fill==1)
-	   	  	   	  {
-	   	  	   	  //Sin_Gen (&Audio2[0],fs,fleft,fright,bufsize/2);
-	   	  	   	  MPX_Gen (fs,mult_factor,pbuf,MPX_buf,bufsize/2);
-	   	  	   	  DAC_normalise(&MPX_buf[0],mult_factor*bufsize/2);
-	   	  	   	  //STM_EVAL_LEDToggle(LED4);
-	   	  	   	  mpx_buff_fill=0;};
-	   	  	   	  if (mpx_buff_fill==2)
-	   	  	   	  {//Sin_Gen (&Audio2[bufsize],fs,fleft,fright,bufsize/2);
-	   	  	   	   MPX_Gen (fs,mult_factor,pbuf,&MPX_buf[mult_factor*bufsize/2],bufsize/2);
-	   	  	   	  DAC_normalise(&MPX_buf[mult_factor*bufsize/2],mult_factor*bufsize/2);
-	   	  	   	  //STM_EVAL_LEDToggle(LED3);
-	   	  	   	  mpx_buff_fill=0;};*/
 
 	   return AUDIO_OK;    	}
     else /* Not allowed command */

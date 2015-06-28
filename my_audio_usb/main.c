@@ -42,9 +42,6 @@
 __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 s16 Audio[192] __attribute__ ((aligned(4)));//384 samples=768 bytes. in order LRLR...
 s16 Audio2[192] __attribute__ ((aligned(4)));//384 samples=768 bytes. in order LRLR...
-extern s16 MPX_buf[4608] __attribute__ ((aligned(4)));	//4608 bytes MPX signal buffer
-extern uint16_t DAC_buf[4608] __attribute__ ((aligned(4)));		//4608 bytes
-extern uint32_t DDS_buf[4608] __attribute__ ((aligned(4)));		//4608 bytes
 extern const s16 LUT[16384];
 extern volatile uint8_t audio_buffer_fill;
 volatile uint8_t * xbuf;
@@ -125,16 +122,16 @@ uint32_t f0;
 	    if (audio_buffer_fill==1)
 	      			{
 		  //Sin_Gen (&Audio[0],fs,fleft,fright,48);
-	    	memcpy(Audio,xbuf,192);
-	    	if (!(UserButtonPressed&2))
+	    	memcpy(Audio,xbuf,192); //moved to codec routines
+	    	//if (!(UserButtonPressed&2))
 	    	memcpy(Audio2,Audio,192);
 		    audio_buffer_fill=0;
 	      			};
 	      	if (audio_buffer_fill==2)
 	      		  	{
 	     		//Sin_Gen (&Audio[96],fs,fleft,fright,48);
-	      		memcpy((uint8_t*)Audio+192,xbuf,192);
-	      		if (!(UserButtonPressed&2))
+	      		memcpy((uint8_t*)Audio+192,xbuf,192);// moved to codec routines
+	      		//if (!(UserButtonPressed&2))
 	      		memcpy((uint8_t*)Audio2+192,(uint8_t*)Audio+192,192);
 	      		audio_buffer_fill=0;
 	      	    	};
@@ -152,8 +149,8 @@ uint32_t f0;
 	      	//DDS is synchronous with DAC
 	  if (mpx_buff_fill==1)
 	  {
-		  if (UserButtonPressed&2)
-		  Sin_Gen (&Audio2[0],fs,fleft,fright,48);
+		 // if (UserButtonPressed&2)
+		 // Sin_Gen (&Audio2[0],fs,fleft,fright,48);
 
 		  MPX_Gen (fs,mult_factor,&Audio2[0],MPX_buf,bufsize/2);
 	      DAC_normalise(&MPX_buf[0],&DAC_buf[0],mult_factor*bufsize/2);
@@ -163,8 +160,8 @@ uint32_t f0;
 	  };
 	  if (mpx_buff_fill==2)
 	  {
-		  if (UserButtonPressed&2)
-		  Sin_Gen (&Audio2[96],fs,fleft,fright,48);
+		//  if (UserButtonPressed&2)
+		//  Sin_Gen (&Audio2[96],fs,fleft,fright,48);
 
 		  MPX_Gen (fs,mult_factor,&Audio2[bufsize],&MPX_buf[mult_factor*bufsize/2],bufsize/2);
 	  	  DAC_normalise(&MPX_buf[mult_factor*bufsize/2],&DAC_buf[mult_factor*bufsize/2],mult_factor*bufsize/2);

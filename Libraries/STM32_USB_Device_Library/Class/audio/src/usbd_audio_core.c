@@ -153,7 +153,7 @@ uint8_t  AudioCtl[64];
 uint8_t  AudioCtlCmd = 0;
 uint32_t AudioCtlLen = 0;
 uint8_t  AudioCtlUnit = 0;
-#define SOF_RATE 0x7
+#define SOF_RATE 0x1
 static uint32_t PlayFlag = 0;
 static volatile  uint16_t SOF_num=0;
 static volatile uint32_t  usbd_audio_AltSet = 0;
@@ -347,7 +347,9 @@ CONFIG_ONLY_DESC_SIZE,     /*  Configuration Descriptor Size - always 9 bytes*/
   };
 #endif
 /* USB AUDIO device Configuration Descriptor */
-
+/*#ifndef sync
+#define sync
+#endif*/
 #ifdef sync
 static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
 {
@@ -479,7 +481,7 @@ static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
     USB_ENDPOINT_DESCRIPTOR_TYPE,         /* bDescriptorType */
     AUDIO_OUT_EP,                         /* bEndpointAddress 1 out endpoint*/
     0x05,							        /* bmAttributes */
-    AUDIO_OUT_PACKET+16,0,    /* wMaxPacketSize in Bytes (Freq(Samples)*2(Stereo)*2(HalfWord)) */
+    196,0,    							/* wMaxPacketSize in Bytes (Freq(Samples)*2(Stereo)*2(HalfWord)) */
     0x01,                                 /* bInterval */
     0x01,                                 /* bRefresh */
     AUDIO_IN_EP,                                 /* bSynchAddress */
@@ -507,6 +509,7 @@ static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
   //SOF_RATE,                                 /* bRefresh 2ms*/
   0x00,                                 /* bSynchAddress */
   /* 09 byte*/
+
 } ;
 #else
 /* USB AUDIO device Configuration Descriptor */
@@ -521,7 +524,7 @@ static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
   0x01,                                 /* bConfigurationValue */
   0x00,                                 /* iConfiguration */
   0xC0,                                 /* bmAttributes  BUS Powred*/
-  0x32,                                 /* bMaxPower = 100 mA*/
+  0xF0,                                 /* bMaxPower = 500 mA*/
   /* 09 byte*/
 
   /* USB Speaker Standard interface descriptor */
@@ -1073,7 +1076,7 @@ static uint8_t  usbd_audio_DataIn (void *pdev, uint8_t epnum)
   * @param  epnum: endpoint number
   * @retval status
   */
-uint8_t tmpbuf[AUDIO_OUT_PACKET+16] __attribute__ ((aligned(4)));
+uint8_t tmpbuf[AUDIO_OUT_PACKET+4] __attribute__ ((aligned(4)));
 
 static volatile uint16_t rest;
 static volatile uint16_t max_length;
@@ -1148,6 +1151,9 @@ static uint8_t  usbd_audio_DataOut (void *pdev, uint8_t epnum)
   */
 static volatile int32_t gap,corr,oldgap,dgap,tmpxx;
 
+#define FB_RATE_DELTA (1<<12)
+#define FB_RATE_DELTA_NUM 2
+
 static uint8_t  usbd_audio_SOF (void *pdev)
 {     uint8_t res;
 static uint16_t n;
@@ -1204,7 +1210,7 @@ if (usbd_audio_AltSet==1)
     	/* Increment to the next sub-buffer */
 
     /* If all available buffers have been consumed, stop playing */
-    /*if (IsocOutRdPtr == IsocOutWrPtr)
+    if (IsocOutRdPtr == IsocOutWrPtr)
     {    
       // Pause the audio stream
       AUDIO_OUT_fops.AudioCmd((uint8_t*)(IsocOutBuff),   // Samples buffer pointer
@@ -1218,7 +1224,7 @@ if (usbd_audio_AltSet==1)
      // IsocOutRdPtr = IsocOutBuff;
       //IsocOutWrPtr = IsocOutBuff;
     }
-*/
+
 //#ifdef sync
 
 //#endif

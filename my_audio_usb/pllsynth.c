@@ -197,7 +197,7 @@ void ad9951_init(void)
 	int ret;
 	uint64_t tmp64;
 	uint8_t i;
-	uint32_t carrier=107810;
+	uint32_t carrier=107800;
 
 //	AD9951_SPI_Init();
 /*	RESET_H;

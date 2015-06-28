@@ -2239,6 +2239,7 @@ uint16_t EVAL_AUDIO_GetSampleCallBack(void)
   
 }
 
+
 /* This function is called when the requested data has been completely transferred.
    In Normal mode (when  the define AUDIO_MAL_MODE_NORMAL is enabled) this function
    is called at the end of the whole audio file.
@@ -2255,6 +2256,7 @@ void EVAL_AUDIO_HalfTransfer_CallBack(uint32_t *pBuffer, uint32_t Size)
 {
 
 	audio_buffer_fill=1;
+
 
 }
 

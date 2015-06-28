@@ -49,7 +49,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
         </MemoryAreas>
-        <LocateLinkFile path="../../../users/admin/appdata/roaming/coocox/coide/configuration/programdata/usb_audio/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="c:/users/romanetz/appdata/roaming/coocox/coide/configuration/programdata/usb_audio/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -116,9 +116,9 @@
     <File name="CMSIS/DSP/arm_fir_interpolate_q15.c" path="../Libraries/CMSIS/Source/FilteringFunctions/arm_fir_interpolate_q15.c" type="1"/>
     <File name="CMSIS/core_cm4.h" path="../Libraries/CMSIS/Include/core_cm4.h" type="1"/>
     <File name="Library/stm32f4xx_dma.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c" type="1"/>
-    <File name="Library/stm32f4xx_fsmc.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c" type="1"/>
     <File name="Library/stm32f4xx_hash_sha1.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c" type="1"/>
     <File name="CMSIS/DSP/arm_fir_interpolate_f32.c" path="../Libraries/CMSIS/Source/FilteringFunctions/arm_fir_interpolate_f32.c" type="1"/>
+    <File name="Library/stm32f4xx_fsmc.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c" type="1"/>
     <File name="Library/stm32f4xx_pwr.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c" type="1"/>
     <File name="stdio/printf.c" path="stdio/printf.c" type="1"/>
     <File name="Library/stm32f4xx_syscfg.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c" type="1"/>
@@ -138,9 +138,9 @@
     <File name="semihosting" path="" type="2"/>
     <File name="usb_bsp.c" path="usb_bsp.c" type="1"/>
     <File name="usb_audio" path="" type="2"/>
-    <File name="mpx.c" path="mpx.c" type="1"/>
     <File name="usb_core/usbd_ioreq.c" path="../Libraries/STM32_USB_Device_Library/Core/src/usbd_ioreq.c" type="1"/>
     <File name="Library/stm32f4xx_rng.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c" type="1"/>
+    <File name="mpx.c" path="mpx.c" type="1"/>
     <File name="Library/stm32f4xx_crc.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c" type="1"/>
     <File name="usb_core" path="" type="2"/>
     <File name="Library/stm32f4xx_rcc.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c" type="1"/>
@@ -158,9 +158,9 @@
     <File name="usb_core/usbd_core.c" path="../Libraries/STM32_USB_Device_Library/Core/src/usbd_core.c" type="1"/>
     <File name="syscalls" path="" type="2"/>
     <File name="startup_stm32f4xx.c" path="startup_stm32f4xx.c" type="1"/>
-    <File name="Library/stm32f4xx_wwdg.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c" type="1"/>
     <File name="board/stm32f4_discovery_lis302dl.c" path="../Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c" type="1"/>
     <File name="Library/stm32f4xx_hash.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c" type="1"/>
+    <File name="Library/stm32f4xx_wwdg.c" path="../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c" type="1"/>
     <File name="usb_otg/usb_dcd.c" path="../Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c" type="1"/>
     <File name="CMSIS/DSP/arm_fir_f32.c" path="../Libraries/CMSIS/Source/FilteringFunctions/arm_fir_f32.c" type="1"/>
     <File name="semihosting/semihosting.h" path="semihosting/semihosting.h" type="1"/>
