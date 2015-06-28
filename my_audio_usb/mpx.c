@@ -98,12 +98,12 @@ arm_fir_init_f32(
  (float32_t*) &fir_coeffs_ram[0],
  (float32_t*)  &fir_state_R[0],
   bsize);
-preemph_iir_coeefsA[0]= 3.700000000000000;
-preemph_iir_coeefsA[1]=-2.0749804609719114;
-preemph_iir_coeefsA[2]= 0.29148977645376883;
+preemph_iir_coeefsA[0]= 3.200000000000000;
+preemph_iir_coeefsA[1]=-2.0139149;
+preemph_iir_coeefsA[2]= 0;
 preemph_iir_coeefsB[0]=1;
-preemph_iir_coeefsB[1]=	0.66050429087994633;
-preemph_iir_coeefsB[2]=	0.20613525810784808;
+preemph_iir_coeefsB[1]=	0.21809103944149166;
+preemph_iir_coeefsB[2]=	0;
 };
 
 
@@ -153,14 +153,14 @@ xx_L[1]=xx_L[0];
 xx_L[0]=(float)L;
 yy_L[2]=yy_L[1];
 yy_L[1]=yy_L[0];
-yy_L[0]=xx_L[0]+xx_L[1]*preemph_iir_coeefsA[1]+xx_L[2]*preemph_iir_coeefsA[2]-yy_L[1]*preemph_iir_coeefsB[1]-yy_L[2]*preemph_iir_coeefsB[2];
+yy_L[0]=xx_L[0]*preemph_iir_coeefsA[0]+xx_L[1]*preemph_iir_coeefsA[1]-yy_L[1]*preemph_iir_coeefsB[1];//+xx_L[2]*preemph_iir_coeefsA[2]-yy_L[1]*preemph_iir_coeefsB[1]-yy_L[2]*preemph_iir_coeefsB[2];
 
 xx_R[2]=xx_R[1];
 xx_R[1]=xx_R[0];
 xx_R[0]=(float)R;
 yy_R[2]=yy_R[1];
 yy_R[1]=yy_R[0];
-yy_R[0]=xx_R[0]+xx_R[1]*preemph_iir_coeefsA[1]+xx_R[2]*preemph_iir_coeefsA[2]-yy_R[1]*preemph_iir_coeefsB[1]-yy_R[2]*preemph_iir_coeefsB[2];
+yy_R[0]=xx_R[0]*preemph_iir_coeefsA[0]+xx_R[1]*preemph_iir_coeefsA[1]-yy_R[1]*preemph_iir_coeefsB[1];//+xx_R[2]*preemph_iir_coeefsA[2]-yy_R[1]*preemph_iir_coeefsB[1]-yy_R[2]*preemph_iir_coeefsB[2];
 Lbuf[cnt]=yy_L[0];
 Rbuf[cnt]=yy_R[0];
 cnt++;
@@ -240,13 +240,13 @@ MPX=(s16)mpx_float;
 cnt++;
 };
 }
-
+int d=30;
 void FM_MPX(uint32_t f0code,float * inbuf,uint16_t size, uint32_t * outbuf)
 {int32_t tmp;
 uint16_t cnt=0;
 while (cnt<size)
 {tmp=*(inbuf++);
-	*(outbuf++)=__REV(tmp*20+f0code);
+	*(outbuf++)=__REV(tmp*d+f0code);
 	cnt++;};
 }
 

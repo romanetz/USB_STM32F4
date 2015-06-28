@@ -315,7 +315,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0xfe14
+.text           0x08000000     0xfde4
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -614,235 +614,235 @@ Linker script and memory map
                 0x08003bcc                USBD_CtlSendStatus
                 0x08003bec                USBD_CtlReceiveStatus
                 0x08003c0c                USBD_GetRxCount
- .text          0x08003c1c      0x43c ..\obj\mpx.o
+ .text          0x08003c1c      0x40c ..\obj\mpx.o
                 0x08003c1c                mpx_init
-                0x08003d14                MPX_Gen
-                0x08003f9c                FM_MPX
-                0x08003fd0                DAC_normalise
-                0x08003fd4                Sin_Gen
- .text          0x08004058      0x478 ..\obj\stm32f4xx_rcc.o
-                0x08004058                RCC_DeInit
-                0x0800408c                RCC_HSEConfig
-                0x0800409c                RCC_WaitForHSEStartUp
-                0x080040d0                RCC_AdjustHSICalibrationValue
-                0x080040e4                RCC_HSICmd
-                0x080040f0                RCC_LSEConfig
-                0x08004110                RCC_LSICmd
-                0x0800411c                RCC_PLLConfig
-                0x08004140                RCC_PLLCmd
-                0x0800414c                RCC_PLLI2SConfig
-                0x08004160                RCC_PLLI2SCmd
-                0x0800416c                RCC_ClockSecuritySystemCmd
-                0x08004178                RCC_MCO1Config
-                0x0800418c                RCC_MCO2Config
-                0x080041a0                RCC_SYSCLKConfig
-                0x080041b4                RCC_GetSYSCLKSource
-                0x080041c4                RCC_HCLKConfig
-                0x080041d8                RCC_PCLK1Config
-                0x080041ec                RCC_PCLK2Config
-                0x08004200                RCC_GetClocksFreq
-                0x08004298                RCC_RTCCLKConfig
-                0x080042c8                RCC_RTCCLKCmd
-                0x080042d4                RCC_BackupResetCmd
-                0x080042e0                RCC_I2SCLKConfig
-                0x080042ec                RCC_AHB1PeriphClockCmd
-                0x08004304                RCC_AHB2PeriphClockCmd
-                0x0800431c                RCC_AHB3PeriphClockCmd
-                0x08004334                RCC_APB1PeriphClockCmd
-                0x0800434c                RCC_APB2PeriphClockCmd
-                0x08004364                RCC_AHB1PeriphResetCmd
-                0x0800437c                RCC_AHB2PeriphResetCmd
-                0x08004394                RCC_AHB3PeriphResetCmd
-                0x080043ac                RCC_APB1PeriphResetCmd
-                0x080043c4                RCC_APB2PeriphResetCmd
-                0x080043dc                RCC_AHB1PeriphClockLPModeCmd
-                0x080043f4                RCC_AHB2PeriphClockLPModeCmd
-                0x0800440c                RCC_AHB3PeriphClockLPModeCmd
-                0x08004424                RCC_APB1PeriphClockLPModeCmd
-                0x0800443c                RCC_APB2PeriphClockLPModeCmd
-                0x08004454                RCC_ITConfig
-                0x0800446c                RCC_GetFlagStatus
-                0x080044a0                RCC_ClearFlag
-                0x080044b0                RCC_GetITStatus
-                0x080044c4                RCC_ClearITPendingBit
- .text          0x080044d0       0xc8 ..\obj\misc.o
-                0x080044d0                NVIC_PriorityGroupConfig
-                0x080044e4                NVIC_Init
-                0x08004554                NVIC_SetVectorTable
-                0x08004568                NVIC_SystemLPConfig
-                0x08004580                SysTick_CLKSourceConfig
- .text          0x08004598     0x12cc ..\obj\stm32f4_discovery_audio_codec.o
-                0x080047d4                EVAL_AUDIO_SetAudioInterface
-                0x08004878                EVAL_AUDIO_DeInit
-                0x08004948                EVAL_AUDIO_Play
-                0x08004a14                EVAL_AUDIO_PauseResume
-                0x08004aa8                EVAL_AUDIO_Stop
-                0x08004b24                EVAL_AUDIO_VolumeCtl
-                0x08004b68                EVAL_AUDIO_Mute
-                0x08004b80                DMA1_Stream6_IRQHandler
-                0x08004bcc                DMA1_Stream7_IRQHandler
-                0x08004c14                SPI3_IRQHandler
-                0x08004ce8                SetI2SMCLK
-                0x08004d9c                Codec_TIMEOUT_UserCallback
-                0x08004da0                Audio_MAL_Play
-                0x08004e30                Audio_DAC_play
-                0x08004e74                DDS_Play
-                0x08004e78                DAC_Config
-                0x08004f74                EVAL_AUDIO_Init
-                0x08005394                TMR6_Config
-                0x080053ec                DAC_DMA_Config
-                0x080053f0                TMR2_Config
-                0x080054c8                TMR4_Config
-                0x08005624                TMR3_Config
-                0x080057e8                EVAL_AUDIO_GetSampleCallBack
-                0x0800584c                EVAL_AUDIO_TransferComplete_CallBack
-                0x08005858                EVAL_AUDIO_HalfTransfer_CallBack
- .text          0x08005864       0x38 ..\obj\arm_fir_interpolate_init_f32.o
-                0x08005864                arm_fir_interpolate_init_f32
- .text          0x0800589c      0x124 ..\obj\usbd_audio_out_if.o
- .text          0x080059c0      0xed8 ..\obj\usb_core.o
-                0x080059c0                USB_OTG_WritePacket
-                0x080059e8                USB_OTG_ReadPacket
-                0x08005a10                USB_OTG_SelectCore
-                0x08005d5c                USB_OTG_CoreInit
-                0x08005f08                USB_OTG_EnableGlobalInt
-                0x08005f18                USB_OTG_DisableGlobalInt
-                0x08005f28                USB_OTG_FlushTxFifo
-                0x08005f78                USB_OTG_FlushRxFifo
-                0x08005fb8                USB_OTG_SetCurrentMode
-                0x08005fe4                USB_OTG_GetMode
-                0x08005ff0                USB_OTG_IsDeviceMode
-                0x08006000                USB_OTG_IsHostMode
-                0x0800600c                USB_OTG_ReadCoreItr
-                0x08006018                USB_OTG_ReadOtgItr
-                0x08006020                USB_OTG_InitDevSpeed
-                0x0800602c                USB_OTG_CoreInitDev
-                0x080061b8                USB_OTG_EnableDevInt
-                0x080061f4                USB_OTG_GetDeviceSpeed
-                0x08006214                USB_OTG_EP0Activate
-                0x0800623c                USB_OTG_EPActivate
-                0x08006298                USB_OTG_EPDeactivate
-                0x080062dc                USB_OTG_EPStartXfer
-                0x08006418                USB_OTG_EP0StartXfer
-                0x0800651c                USB_OTG_EPSetStall
-                0x0800654c                USB_OTG_EPClearStall
-                0x08006578                USB_OTG_ReadDevAllOutEp_itr
-                0x08006584                USB_OTG_ReadDevOutEP_itr
-                0x08006594                USB_OTG_ReadDevAllInEPItr
-                0x080065a0                USB_OTG_EP0_OutStart
-                0x080065e4                USB_OTG_ActiveRemoteWakeup
-                0x08006628                USB_OTG_UngateClock
-                0x08006648                USB_OTG_StopDevice
-                0x080067b0                USB_OTG_GetEPStatus
-                0x080067fc                USB_OTG_SetEPStatus
- .text          0x08006898      0x260 ..\obj\usbd_core.o
-                0x08006a90                USBD_Init
-                0x08006acc                USBD_DeInit
-                0x08006ad0                USBD_SetCfg
-                0x08006ae8                USBD_ClrCfg
- .text          0x08006af8       0x5c ..\obj\startup_stm32f4xx.o
-                0x08006af8                RTC_Alarm_IRQHandler
-                0x08006af8                HASH_RNG_IRQHandler
-                0x08006af8                EXTI2_IRQHandler
-                0x08006af8                TIM8_CC_IRQHandler
-                0x08006af8                TIM1_CC_IRQHandler
-                0x08006af8                DMA2_Stream5_IRQHandler
-                0x08006af8                DMA1_Stream5_IRQHandler
-                0x08006af8                PVD_IRQHandler
-                0x08006af8                SDIO_IRQHandler
-                0x08006af8                TAMP_STAMP_IRQHandler
-                0x08006af8                CAN2_RX1_IRQHandler
-                0x08006af8                EXTI3_IRQHandler
-                0x08006af8                TIM8_TRG_COM_TIM14_IRQHandler
-                0x08006af8                TIM1_UP_TIM10_IRQHandler
-                0x08006af8                TIM8_UP_TIM13_IRQHandler
-                0x08006af8                I2C3_ER_IRQHandler
-                0x08006af8                I2C2_EV_IRQHandler
-                0x08006af8                DMA1_Stream2_IRQHandler
-                0x08006af8                CAN1_RX0_IRQHandler
-                0x08006af8                FPU_IRQHandler
-                0x08006af8                OTG_HS_WKUP_IRQHandler
-                0x08006af8                CAN2_SCE_IRQHandler
-                0x08006af8                DMA2_Stream2_IRQHandler
-                0x08006af8                SPI1_IRQHandler
-                0x08006af8                TIM6_DAC_IRQHandler
-                0x08006af8                TIM1_BRK_TIM9_IRQHandler
-                0x08006af8                DCMI_IRQHandler
-                0x08006af8                CAN2_RX0_IRQHandler
-                0x08006af8                DMA2_Stream3_IRQHandler
-                0x08006af8                USART6_IRQHandler
-                0x08006af8                USART3_IRQHandler
-                0x08006af8                CRYP_IRQHandler
-                0x08006af8                DMA2_Stream6_IRQHandler
-                0x08006af8                CAN1_RX1_IRQHandler
-                0x08006af8                UART5_IRQHandler
-                0x08006af8                DMA2_Stream0_IRQHandler
-                0x08006af8                TIM4_IRQHandler
-                0x08006af8                I2C1_EV_IRQHandler
-                0x08006af8                DMA1_Stream1_IRQHandler
-                0x08006af8                UART4_IRQHandler
-                0x08006af8                TIM3_IRQHandler
-                0x08006af8                RCC_IRQHandler
-                0x08006af8                TIM8_BRK_TIM12_IRQHandler
-                0x08006af8                EXTI15_10_IRQHandler
-                0x08006af8                ADC_IRQHandler
-                0x08006af8                I2C1_ER_IRQHandler
-                0x08006af8                TIM7_IRQHandler
-                0x08006af8                CAN2_TX_IRQHandler
-                0x08006af8                TIM5_IRQHandler
-                0x08006af8                DMA2_Stream7_IRQHandler
-                0x08006af8                I2C3_EV_IRQHandler
-                0x08006af8                EXTI9_5_IRQHandler
-                0x08006af8                RTC_WKUP_IRQHandler
-                0x08006af8                ETH_WKUP_IRQHandler
-                0x08006af8                SPI2_IRQHandler
-                0x08006af8                OTG_HS_EP1_IN_IRQHandler
-                0x08006af8                CAN1_TX_IRQHandler
-                0x08006af8                EXTI4_IRQHandler
-                0x08006af8                FSMC_IRQHandler
-                0x08006af8                ETH_IRQHandler
-                0x08006af8                OTG_HS_EP1_OUT_IRQHandler
-                0x08006af8                WWDG_IRQHandler
-                0x08006af8                TIM2_IRQHandler
-                0x08006af8                TIM1_TRG_COM_TIM11_IRQHandler
-                0x08006af8                OTG_HS_IRQHandler
-                0x08006af8                EXTI1_IRQHandler
-                0x08006af8                USART2_IRQHandler
-                0x08006af8                I2C2_ER_IRQHandler
-                0x08006af8                DMA2_Stream1_IRQHandler
-                0x08006af8                CAN1_SCE_IRQHandler
-                0x08006af8                FLASH_IRQHandler
-                0x08006af8                DMA2_Stream4_IRQHandler
-                0x08006af8                USART1_IRQHandler
-                0x08006af8                DMA1_Stream4_IRQHandler
-                0x08006af8                DMA1_Stream3_IRQHandler
-                0x08006afc                Reset_Handler
-                0x08006afc                Default_Reset_Handler
- .text          0x08006b54      0x69c ..\obj\usb_dcd.o
-                0x08006b54                DCD_Init
-                0x08006fc8                DCD_EP_Open
-                0x08007028                DCD_EP_Close
-                0x08007060                DCD_EP_PrepareRx
-                0x080070ac                DCD_EP_Tx
-                0x080070f4                DCD_EP_Stall
-                0x08007130                DCD_EP_ClrStall
-                0x0800716c                DCD_EP_Flush
-                0x08007188                DCD_EP_SetAddress
-                0x08007198                DCD_DevConnect
-                0x0800719c                DCD_DevDisconnect
-                0x080071a0                DCD_GetEPStatus
-                0x080071c8                DCD_SetEPStatus
- .text          0x080071f0      0x248 ..\obj\arm_fir_f32.o
-                0x080071f0                arm_fir_f32
- .text          0x08007438       0x2c ..\obj\main.o
-                0x08007438                Delayms
-                0x08007450                TimingDelay_Decrement
- .text.startup  0x08007464      0x238 ..\obj\main.o
-                0x08007464                main
- .text          0x0800769c      0x134 g:/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memcpy.o)
-                0x0800769c                memcpy
- .text.memset   0x080077d0       0x9c g:/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
-                0x080077d0                memset
+                0x08003d08                MPX_Gen
+                0x08003f6c                FM_MPX
+                0x08003fa0                DAC_normalise
+                0x08003fa4                Sin_Gen
+ .text          0x08004028      0x478 ..\obj\stm32f4xx_rcc.o
+                0x08004028                RCC_DeInit
+                0x0800405c                RCC_HSEConfig
+                0x0800406c                RCC_WaitForHSEStartUp
+                0x080040a0                RCC_AdjustHSICalibrationValue
+                0x080040b4                RCC_HSICmd
+                0x080040c0                RCC_LSEConfig
+                0x080040e0                RCC_LSICmd
+                0x080040ec                RCC_PLLConfig
+                0x08004110                RCC_PLLCmd
+                0x0800411c                RCC_PLLI2SConfig
+                0x08004130                RCC_PLLI2SCmd
+                0x0800413c                RCC_ClockSecuritySystemCmd
+                0x08004148                RCC_MCO1Config
+                0x0800415c                RCC_MCO2Config
+                0x08004170                RCC_SYSCLKConfig
+                0x08004184                RCC_GetSYSCLKSource
+                0x08004194                RCC_HCLKConfig
+                0x080041a8                RCC_PCLK1Config
+                0x080041bc                RCC_PCLK2Config
+                0x080041d0                RCC_GetClocksFreq
+                0x08004268                RCC_RTCCLKConfig
+                0x08004298                RCC_RTCCLKCmd
+                0x080042a4                RCC_BackupResetCmd
+                0x080042b0                RCC_I2SCLKConfig
+                0x080042bc                RCC_AHB1PeriphClockCmd
+                0x080042d4                RCC_AHB2PeriphClockCmd
+                0x080042ec                RCC_AHB3PeriphClockCmd
+                0x08004304                RCC_APB1PeriphClockCmd
+                0x0800431c                RCC_APB2PeriphClockCmd
+                0x08004334                RCC_AHB1PeriphResetCmd
+                0x0800434c                RCC_AHB2PeriphResetCmd
+                0x08004364                RCC_AHB3PeriphResetCmd
+                0x0800437c                RCC_APB1PeriphResetCmd
+                0x08004394                RCC_APB2PeriphResetCmd
+                0x080043ac                RCC_AHB1PeriphClockLPModeCmd
+                0x080043c4                RCC_AHB2PeriphClockLPModeCmd
+                0x080043dc                RCC_AHB3PeriphClockLPModeCmd
+                0x080043f4                RCC_APB1PeriphClockLPModeCmd
+                0x0800440c                RCC_APB2PeriphClockLPModeCmd
+                0x08004424                RCC_ITConfig
+                0x0800443c                RCC_GetFlagStatus
+                0x08004470                RCC_ClearFlag
+                0x08004480                RCC_GetITStatus
+                0x08004494                RCC_ClearITPendingBit
+ .text          0x080044a0       0xc8 ..\obj\misc.o
+                0x080044a0                NVIC_PriorityGroupConfig
+                0x080044b4                NVIC_Init
+                0x08004524                NVIC_SetVectorTable
+                0x08004538                NVIC_SystemLPConfig
+                0x08004550                SysTick_CLKSourceConfig
+ .text          0x08004568     0x12cc ..\obj\stm32f4_discovery_audio_codec.o
+                0x080047a4                EVAL_AUDIO_SetAudioInterface
+                0x08004848                EVAL_AUDIO_DeInit
+                0x08004918                EVAL_AUDIO_Play
+                0x080049e4                EVAL_AUDIO_PauseResume
+                0x08004a78                EVAL_AUDIO_Stop
+                0x08004af4                EVAL_AUDIO_VolumeCtl
+                0x08004b38                EVAL_AUDIO_Mute
+                0x08004b50                DMA1_Stream6_IRQHandler
+                0x08004b9c                DMA1_Stream7_IRQHandler
+                0x08004be4                SPI3_IRQHandler
+                0x08004cb8                SetI2SMCLK
+                0x08004d6c                Codec_TIMEOUT_UserCallback
+                0x08004d70                Audio_MAL_Play
+                0x08004e00                Audio_DAC_play
+                0x08004e44                DDS_Play
+                0x08004e48                DAC_Config
+                0x08004f44                EVAL_AUDIO_Init
+                0x08005364                TMR6_Config
+                0x080053bc                DAC_DMA_Config
+                0x080053c0                TMR2_Config
+                0x08005498                TMR4_Config
+                0x080055f4                TMR3_Config
+                0x080057b8                EVAL_AUDIO_GetSampleCallBack
+                0x0800581c                EVAL_AUDIO_TransferComplete_CallBack
+                0x08005828                EVAL_AUDIO_HalfTransfer_CallBack
+ .text          0x08005834       0x38 ..\obj\arm_fir_interpolate_init_f32.o
+                0x08005834                arm_fir_interpolate_init_f32
+ .text          0x0800586c      0x124 ..\obj\usbd_audio_out_if.o
+ .text          0x08005990      0xed8 ..\obj\usb_core.o
+                0x08005990                USB_OTG_WritePacket
+                0x080059b8                USB_OTG_ReadPacket
+                0x080059e0                USB_OTG_SelectCore
+                0x08005d2c                USB_OTG_CoreInit
+                0x08005ed8                USB_OTG_EnableGlobalInt
+                0x08005ee8                USB_OTG_DisableGlobalInt
+                0x08005ef8                USB_OTG_FlushTxFifo
+                0x08005f48                USB_OTG_FlushRxFifo
+                0x08005f88                USB_OTG_SetCurrentMode
+                0x08005fb4                USB_OTG_GetMode
+                0x08005fc0                USB_OTG_IsDeviceMode
+                0x08005fd0                USB_OTG_IsHostMode
+                0x08005fdc                USB_OTG_ReadCoreItr
+                0x08005fe8                USB_OTG_ReadOtgItr
+                0x08005ff0                USB_OTG_InitDevSpeed
+                0x08005ffc                USB_OTG_CoreInitDev
+                0x08006188                USB_OTG_EnableDevInt
+                0x080061c4                USB_OTG_GetDeviceSpeed
+                0x080061e4                USB_OTG_EP0Activate
+                0x0800620c                USB_OTG_EPActivate
+                0x08006268                USB_OTG_EPDeactivate
+                0x080062ac                USB_OTG_EPStartXfer
+                0x080063e8                USB_OTG_EP0StartXfer
+                0x080064ec                USB_OTG_EPSetStall
+                0x0800651c                USB_OTG_EPClearStall
+                0x08006548                USB_OTG_ReadDevAllOutEp_itr
+                0x08006554                USB_OTG_ReadDevOutEP_itr
+                0x08006564                USB_OTG_ReadDevAllInEPItr
+                0x08006570                USB_OTG_EP0_OutStart
+                0x080065b4                USB_OTG_ActiveRemoteWakeup
+                0x080065f8                USB_OTG_UngateClock
+                0x08006618                USB_OTG_StopDevice
+                0x08006780                USB_OTG_GetEPStatus
+                0x080067cc                USB_OTG_SetEPStatus
+ .text          0x08006868      0x260 ..\obj\usbd_core.o
+                0x08006a60                USBD_Init
+                0x08006a9c                USBD_DeInit
+                0x08006aa0                USBD_SetCfg
+                0x08006ab8                USBD_ClrCfg
+ .text          0x08006ac8       0x5c ..\obj\startup_stm32f4xx.o
+                0x08006ac8                RTC_Alarm_IRQHandler
+                0x08006ac8                HASH_RNG_IRQHandler
+                0x08006ac8                EXTI2_IRQHandler
+                0x08006ac8                TIM8_CC_IRQHandler
+                0x08006ac8                TIM1_CC_IRQHandler
+                0x08006ac8                DMA2_Stream5_IRQHandler
+                0x08006ac8                DMA1_Stream5_IRQHandler
+                0x08006ac8                PVD_IRQHandler
+                0x08006ac8                SDIO_IRQHandler
+                0x08006ac8                TAMP_STAMP_IRQHandler
+                0x08006ac8                CAN2_RX1_IRQHandler
+                0x08006ac8                EXTI3_IRQHandler
+                0x08006ac8                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08006ac8                TIM1_UP_TIM10_IRQHandler
+                0x08006ac8                TIM8_UP_TIM13_IRQHandler
+                0x08006ac8                I2C3_ER_IRQHandler
+                0x08006ac8                I2C2_EV_IRQHandler
+                0x08006ac8                DMA1_Stream2_IRQHandler
+                0x08006ac8                CAN1_RX0_IRQHandler
+                0x08006ac8                FPU_IRQHandler
+                0x08006ac8                OTG_HS_WKUP_IRQHandler
+                0x08006ac8                CAN2_SCE_IRQHandler
+                0x08006ac8                DMA2_Stream2_IRQHandler
+                0x08006ac8                SPI1_IRQHandler
+                0x08006ac8                TIM6_DAC_IRQHandler
+                0x08006ac8                TIM1_BRK_TIM9_IRQHandler
+                0x08006ac8                DCMI_IRQHandler
+                0x08006ac8                CAN2_RX0_IRQHandler
+                0x08006ac8                DMA2_Stream3_IRQHandler
+                0x08006ac8                USART6_IRQHandler
+                0x08006ac8                USART3_IRQHandler
+                0x08006ac8                CRYP_IRQHandler
+                0x08006ac8                DMA2_Stream6_IRQHandler
+                0x08006ac8                CAN1_RX1_IRQHandler
+                0x08006ac8                UART5_IRQHandler
+                0x08006ac8                DMA2_Stream0_IRQHandler
+                0x08006ac8                TIM4_IRQHandler
+                0x08006ac8                I2C1_EV_IRQHandler
+                0x08006ac8                DMA1_Stream1_IRQHandler
+                0x08006ac8                UART4_IRQHandler
+                0x08006ac8                TIM3_IRQHandler
+                0x08006ac8                RCC_IRQHandler
+                0x08006ac8                TIM8_BRK_TIM12_IRQHandler
+                0x08006ac8                EXTI15_10_IRQHandler
+                0x08006ac8                ADC_IRQHandler
+                0x08006ac8                I2C1_ER_IRQHandler
+                0x08006ac8                TIM7_IRQHandler
+                0x08006ac8                CAN2_TX_IRQHandler
+                0x08006ac8                TIM5_IRQHandler
+                0x08006ac8                DMA2_Stream7_IRQHandler
+                0x08006ac8                I2C3_EV_IRQHandler
+                0x08006ac8                EXTI9_5_IRQHandler
+                0x08006ac8                RTC_WKUP_IRQHandler
+                0x08006ac8                ETH_WKUP_IRQHandler
+                0x08006ac8                SPI2_IRQHandler
+                0x08006ac8                OTG_HS_EP1_IN_IRQHandler
+                0x08006ac8                CAN1_TX_IRQHandler
+                0x08006ac8                EXTI4_IRQHandler
+                0x08006ac8                FSMC_IRQHandler
+                0x08006ac8                ETH_IRQHandler
+                0x08006ac8                OTG_HS_EP1_OUT_IRQHandler
+                0x08006ac8                WWDG_IRQHandler
+                0x08006ac8                TIM2_IRQHandler
+                0x08006ac8                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08006ac8                OTG_HS_IRQHandler
+                0x08006ac8                EXTI1_IRQHandler
+                0x08006ac8                USART2_IRQHandler
+                0x08006ac8                I2C2_ER_IRQHandler
+                0x08006ac8                DMA2_Stream1_IRQHandler
+                0x08006ac8                CAN1_SCE_IRQHandler
+                0x08006ac8                FLASH_IRQHandler
+                0x08006ac8                DMA2_Stream4_IRQHandler
+                0x08006ac8                USART1_IRQHandler
+                0x08006ac8                DMA1_Stream4_IRQHandler
+                0x08006ac8                DMA1_Stream3_IRQHandler
+                0x08006acc                Reset_Handler
+                0x08006acc                Default_Reset_Handler
+ .text          0x08006b24      0x69c ..\obj\usb_dcd.o
+                0x08006b24                DCD_Init
+                0x08006f98                DCD_EP_Open
+                0x08006ff8                DCD_EP_Close
+                0x08007030                DCD_EP_PrepareRx
+                0x0800707c                DCD_EP_Tx
+                0x080070c4                DCD_EP_Stall
+                0x08007100                DCD_EP_ClrStall
+                0x0800713c                DCD_EP_Flush
+                0x08007158                DCD_EP_SetAddress
+                0x08007168                DCD_DevConnect
+                0x0800716c                DCD_DevDisconnect
+                0x08007170                DCD_GetEPStatus
+                0x08007198                DCD_SetEPStatus
+ .text          0x080071c0      0x248 ..\obj\arm_fir_f32.o
+                0x080071c0                arm_fir_f32
+ .text          0x08007408       0x2c ..\obj\main.o
+                0x08007408                Delayms
+                0x08007420                TimingDelay_Decrement
+ .text.startup  0x08007434      0x238 ..\obj\main.o
+                0x08007434                main
+ .text          0x0800766c      0x134 g:/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memcpy.o)
+                0x0800766c                memcpy
+ .text.memset   0x080077a0       0x9c g:/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
+                0x080077a0                memset
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -856,53 +856,53 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x0800786c       0x30 ..\obj\stm32f4_discovery.o
-                0x0800786c                GPIO_CLK
-                0x0800787c                GPIO_PIN
-                0x08007884                BUTTON_IRQn
-                0x08007888                BUTTON_PIN_SOURCE
-                0x0800788c                BUTTON_PORT_SOURCE
-                0x08007890                BUTTON_EXTI_LINE
-                0x08007894                BUTTON_CLK
-                0x08007898                BUTTON_PIN
+ .rodata        0x0800783c       0x30 ..\obj\stm32f4_discovery.o
+                0x0800783c                GPIO_CLK
+                0x0800784c                GPIO_PIN
+                0x08007854                BUTTON_IRQn
+                0x08007858                BUTTON_PIN_SOURCE
+                0x0800785c                BUTTON_PORT_SOURCE
+                0x08007860                BUTTON_EXTI_LINE
+                0x08007864                BUTTON_CLK
+                0x08007868                BUTTON_PIN
  .rodata.str1.4
-                0x0800789c       0x9c ..\obj\usbd_desc.o
- .rodata        0x08007938     0x8490 ..\obj\mpx.o
-                0x08007938                interp_coeffs
-                0x08007c38                fir_coeffs
-                0x08007dc8                LUT
- .rodata        0x0800fdc8       0x4c ..\obj\stm32f4_discovery_audio_codec.o
+                0x0800786c       0x9c ..\obj\usbd_desc.o
+ .rodata        0x08007908     0x8490 ..\obj\mpx.o
+                0x08007908                interp_coeffs
+                0x08007c08                fir_coeffs
+                0x08007d98                LUT
+ .rodata        0x0800fd98       0x4c ..\obj\stm32f4_discovery_audio_codec.o
  *(.eh_fram e*)
 
-.glue_7         0x0800fe14        0x0
+.glue_7         0x0800fde4        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x0800fe14        0x0
+.glue_7t        0x0800fde4        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x0800fe14        0x0
+.vfp11_veneer   0x0800fde4        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x0800fe14        0x0
+.v4_bx          0x0800fde4        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x0800fe14        0x0
+.iplt           0x0800fde4        0x0
  .iplt          0x00000000        0x0 ..\obj\stm32f4_discovery.o
 
-.rel.dyn        0x0800fe14        0x0
+.rel.dyn        0x0800fde4        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\stm32f4_discovery.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800fe14                __exidx_start = .
+                0x0800fde4                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0800fe14                __exidx_end = .
-                0x0800fe14                __etext = .
-                0x0800fe14                _sidata = __etext
+                0x0800fde4                __exidx_end = .
+                0x0800fde4                __etext = .
+                0x0800fde4                _sidata = __etext
 
-.data           0x20000000      0x1f0 load address 0x0800fe14
+.data           0x20000000      0x1f4 load address 0x0800fde4
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -926,7 +926,7 @@ Linker script and memory map
                 0x20000104                USBD_LangIDDesc
                 0x20000108                USBD_DeviceQualifierDesc
                 0x20000114                USR_desc
- .data          0x20000130       0x20 ..\obj\mpx.o
+ .data          0x20000130       0x24 ..\obj\mpx.o
                 0x20000130                interp_ptr_L
                 0x20000134                interp_ptr_R
                 0x20000138                fir_ptr_L
@@ -934,158 +934,160 @@ Linker script and memory map
                 0x20000140                b
                 0x20000144                c
                 0x20000148                a
-                0x2000014c                Volume_curr
- .data          0x20000150       0x10 ..\obj\stm32f4xx_rcc.o
- .data          0x20000160       0x38 ..\obj\stm32f4_discovery_audio_codec.o
-                0x20000160                CODECTimeout
-                0x20000164                CurrAudioInterface
-                0x20000168                AUDIO_MAL_DMA_CLOCK
-                0x2000016c                AUDIO_MAL_DMA_STREAM
-                0x20000170                AUDIO_MAL_DMA_DREG
-                0x20000174                AUDIO_MAL_DMA_IRQ
-                0x20000178                AUDIO_MAL_DMA_FLAG_TC
-                0x2000017c                AUDIO_MAL_DMA_FLAG_HT
-                0x20000180                AUDIO_MAL_DMA_FLAG_FE
-                0x20000184                AUDIO_MAL_DMA_FLAG_TE
-                0x20000188                AUDIO_MAL_DMA_FLAG_DME
-                0x2000018c                AudioTotalSize
-                0x20000190                dds_spi_buf
- .data          0x20000198       0x1c ..\obj\usbd_audio_out_if.o
-                0x20000198                AUDIO_OUT_fops
- .data          0x200001b4       0x30 ..\obj\usbd_core.o
-                0x200001b4                USBD_DCD_INT_fops
-                0x200001b8                USBD_DCD_INT_cb
- .data          0x200001e4        0xc ..\obj\main.o
-                0x200001e4                mult_factor
-                0x200001e8                fs
-                0x200001ec                bufsize
-                0x200001f0                . = ALIGN (0x4)
-                0x200001f0                PROVIDE (__preinit_array_start, .)
+                0x2000014c                d
+                0x20000150                Volume_curr
+ .data          0x20000154       0x10 ..\obj\stm32f4xx_rcc.o
+ .data          0x20000164       0x38 ..\obj\stm32f4_discovery_audio_codec.o
+                0x20000164                CODECTimeout
+                0x20000168                CurrAudioInterface
+                0x2000016c                AUDIO_MAL_DMA_CLOCK
+                0x20000170                AUDIO_MAL_DMA_STREAM
+                0x20000174                AUDIO_MAL_DMA_DREG
+                0x20000178                AUDIO_MAL_DMA_IRQ
+                0x2000017c                AUDIO_MAL_DMA_FLAG_TC
+                0x20000180                AUDIO_MAL_DMA_FLAG_HT
+                0x20000184                AUDIO_MAL_DMA_FLAG_FE
+                0x20000188                AUDIO_MAL_DMA_FLAG_TE
+                0x2000018c                AUDIO_MAL_DMA_FLAG_DME
+                0x20000190                AudioTotalSize
+                0x20000194                dds_spi_buf
+ .data          0x2000019c       0x1c ..\obj\usbd_audio_out_if.o
+                0x2000019c                AUDIO_OUT_fops
+ .data          0x200001b8       0x30 ..\obj\usbd_core.o
+                0x200001b8                USBD_DCD_INT_fops
+                0x200001bc                USBD_DCD_INT_cb
+ .data          0x200001e8        0xc ..\obj\main.o
+                0x200001e8                mult_factor
+                0x200001ec                fs
+                0x200001f0                bufsize
+                0x200001f4                . = ALIGN (0x4)
+                0x200001f4                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x200001f0                PROVIDE (__preinit_array_end, .)
-                0x200001f0                . = ALIGN (0x4)
-                0x200001f0                PROVIDE (__init_array_start, .)
+                0x200001f4                PROVIDE (__preinit_array_end, .)
+                0x200001f4                . = ALIGN (0x4)
+                0x200001f4                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x200001f0                PROVIDE (__init_array_end, .)
-                0x200001f0                . = ALIGN (0x4)
-                0x200001f0                PROVIDE (__fini_array_start, .)
+                0x200001f4                PROVIDE (__init_array_end, .)
+                0x200001f4                . = ALIGN (0x4)
+                0x200001f4                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array)
-                0x200001f0                PROVIDE (__fini_array_end, .)
+                0x200001f4                PROVIDE (__fini_array_end, .)
  *(.jcr*)
-                0x200001f0                . = ALIGN (0x4)
-                0x200001f0                __data_end__ = .
-                0x200001f0                _edata = __data_end__
+                0x200001f4                . = ALIGN (0x4)
+                0x200001f4                __data_end__ = .
+                0x200001f4                _edata = __data_end__
 
-.igot.plt       0x200001f0        0x0 load address 0x08010004
+.igot.plt       0x200001f4        0x0 load address 0x0800ffd8
  .igot.plt      0x00000000        0x0 ..\obj\stm32f4_discovery.o
 
-RAM2            0x200001f0     0x1c48 load address 0x08010004
-                0x200001f0                PROVIDE (__start_RAM2, .)
- RAM2           0x200001f0     0x1c48 ..\obj\mpx.o
-                0x200001f0                interp_coeffs_ram
-                0x200004f0                fir_coeffs_ram
-                0x200007f0                interp_state_L
-                0x2000090c                interp_state_R
-                0x20000a28                fir_state_L
-                0x20000c74                fir_state_R
-                0x20000ec0                preemph_iir_coeefsA
-                0x20000ecc                preemph_iir_coeefsB
-                0x20000ed8                xx_L
-                0x20000ee4                yy_L
-                0x20000ef0                xx_R
-                0x20000efc                yy_R
-                0x20000f08                Lbuf
-                0x20000fc8                Rbuf
-                0x20001088                L_interp_buf
-                0x20001688                R_interp_buf
-                0x20001c88                Lbuf2
-                0x20001d48                Rbuf2
-                0x20001e08                fir_R
-                0x20001e14                fir_L
-                0x20001e20                mpx_interp_R
-                0x20001e2c                mpx_interp_L
-                0x20001e38                PROVIDE (__stop_RAM2, .)
+RAM2            0x200001f4     0x1c48 load address 0x0800ffd8
+                0x200001f4                PROVIDE (__start_RAM2, .)
+ RAM2           0x200001f4     0x1c48 ..\obj\mpx.o
+                0x200001f4                interp_coeffs_ram
+                0x200004f4                fir_coeffs_ram
+                0x200007f4                interp_state_L
+                0x20000910                interp_state_R
+                0x20000a2c                fir_state_L
+                0x20000c78                fir_state_R
+                0x20000ec4                preemph_iir_coeefsA
+                0x20000ed0                preemph_iir_coeefsB
+                0x20000edc                xx_L
+                0x20000ee8                yy_L
+                0x20000ef4                xx_R
+                0x20000f00                yy_R
+                0x20000f0c                Lbuf
+                0x20000fcc                Rbuf
+                0x2000108c                L_interp_buf
+                0x2000168c                R_interp_buf
+                0x20001c8c                Lbuf2
+                0x20001d4c                Rbuf2
+                0x20001e0c                fir_R
+                0x20001e18                fir_L
+                0x20001e24                mpx_interp_R
+                0x20001e30                mpx_interp_L
+                0x20001e3c                PROVIDE (__stop_RAM2, .)
 
-.bss            0x20001e38     0x3600 load address 0x08011c4c
-                0x20001e38                . = ALIGN (0x4)
-                0x20001e38                __bss_start__ = .
-                0x20001e38                _sbss = __bss_start__
+.bss            0x20001e3c     0x3600 load address 0x08011c20
+                0x20001e3c                . = ALIGN (0x4)
+                0x20001e3c                __bss_start__ = .
+                0x20001e3c                _sbss = __bss_start__
  *(.bss*)
- .bss           0x20001e38       0x30 ..\obj\usbd_audio_core.o
-                0x20001e3c                AudioCtlCmd
-                0x20001e40                AudioCtlLen
-                0x20001e44                AudioCtlUnit
- .bss           0x20001e68       0x10 ..\obj\usbd_req.o
-                0x20001e6c                USBD_default_cfg
-                0x20001e70                USBD_cfg_status
-                0x20001e74                USBD_ep_status
- .bss           0x20001e78       0x20 ..\obj\mpx.o
- .bss           0x20001e98        0xc ..\obj\stm32f4_discovery_audio_codec.o
-                0x20001e98                AUDIO_MAL_DMA_CHANNEL
-                0x20001e9c                AudioRemSize
-                0x20001ea0                OutputDev
- .bss           0x20001ea4        0xc ..\obj\usbd_audio_out_if.o
-                0x20001eac                cnt1
- .bss           0x20001eb0        0x4 ..\obj\main.o
-                0x20001eb0                mpx_buff_fill
-                0x20001eb1                UserButtonPressed
-                0x20001eb2                PrescalerValue
+ .bss           0x20001e3c       0x30 ..\obj\usbd_audio_core.o
+                0x20001e40                AudioCtlCmd
+                0x20001e44                AudioCtlLen
+                0x20001e48                AudioCtlUnit
+ .bss           0x20001e6c       0x10 ..\obj\usbd_req.o
+                0x20001e70                USBD_default_cfg
+                0x20001e74                USBD_cfg_status
+                0x20001e78                USBD_ep_status
+ .bss           0x20001e7c       0x20 ..\obj\mpx.o
+ .bss           0x20001e9c        0xc ..\obj\stm32f4_discovery_audio_codec.o
+                0x20001e9c                AUDIO_MAL_DMA_CHANNEL
+                0x20001ea0                AudioRemSize
+                0x20001ea4                OutputDev
+ .bss           0x20001ea8        0xc ..\obj\usbd_audio_out_if.o
+                0x20001eb0                cnt1
+ .bss           0x20001eb4        0x4 ..\obj\main.o
+                0x20001eb4                mpx_buff_fill
+                0x20001eb5                UserButtonPressed
+                0x20001eb6                PrescalerValue
  *(COMMON)
- COMMON         0x20001eb4      0xd04 ..\obj\usbd_audio_core.o
-                0x20001eb4                AudioCtl
-                0x20001ef4                IsocOutBuff
-                0x20002af4                tmpbuf
- COMMON         0x20002bb8       0xc8 ..\obj\usbd_req.o
-                0x20002bb8                USBD_StrDesc
- COMMON         0x20002c80        0x9 ..\obj\pllsynth.o
-                0x20002c80                FTW
-                0x20002c84                cfr
- *fill*         0x20002c89        0x3 
- COMMON         0x20002c8c     0x1e05 ..\obj\mpx.o
-                0x20002c8c                DDS_buf
-                0x2000388c                DAC_buf
-                0x20003e8c                FM_buffer_fill
-                0x20003e90                MPX_buf
-                0x20004a90                audio_buffer_fill
- *fill*         0x20004a91        0x3 
- COMMON         0x20004a94       0x86 ..\obj\stm32f4_discovery_audio_codec.o
-                0x20004a94                dac_play_size
-                0x20004a98                CurrentPos
-                0x20004a9c                dac_play_ptr
-                0x20004aa0                AUDIO_MAL_DMA_InitStructure
-                0x20004adc                DMA_InitStructure
-                0x20004b18                dac_play_cnt
- *fill*         0x20004b1a        0x2 
- COMMON         0x20004b1c      0x91c ..\obj\main.o
-                0x20004b1c                xbuf
-                0x20004b20                Audio2
-                0x20004ca0                TimingDelay
-                0x20004ca4                mmm
-                0x20004ca8                nnn
-                0x20004cac                USB_OTG_dev
-                0x200052a0                Buffer
-                0x200052a8                RCC_Clocks
-                0x200052b8                Audio
-                0x20005438                . = ALIGN (0x4)
-                0x20005438                __bss_end__ = .
-                0x20005438                _ebss = __bss_end__
+ COMMON         0x20001eb8      0xd04 ..\obj\usbd_audio_core.o
+                0x20001eb8                AudioCtl
+                0x20001ef8                IsocOutBuff
+                0x20002af8                tmpbuf
+ COMMON         0x20002bbc       0xc8 ..\obj\usbd_req.o
+                0x20002bbc                USBD_StrDesc
+ COMMON         0x20002c84        0x9 ..\obj\pllsynth.o
+                0x20002c84                FTW
+                0x20002c88                cfr
+ *fill*         0x20002c8d        0x3 
+ COMMON         0x20002c90     0x1e05 ..\obj\mpx.o
+                0x20002c90                DDS_buf
+                0x20003890                DAC_buf
+                0x20003e90                FM_buffer_fill
+                0x20003e94                MPX_buf
+                0x20004a94                audio_buffer_fill
+ *fill*         0x20004a95        0x3 
+ COMMON         0x20004a98       0x86 ..\obj\stm32f4_discovery_audio_codec.o
+                0x20004a98                dac_play_size
+                0x20004a9c                CurrentPos
+                0x20004aa0                dac_play_ptr
+                0x20004aa4                AUDIO_MAL_DMA_InitStructure
+                0x20004ae0                DMA_InitStructure
+                0x20004b1c                dac_play_cnt
+ *fill*         0x20004b1e        0x2 
+ COMMON         0x20004b20      0x91c ..\obj\main.o
+                0x20004b20                xbuf
+                0x20004b24                Audio2
+                0x20004ca4                TimingDelay
+                0x20004ca8                mmm
+                0x20004cac                nnn
+                0x20004cb0                USB_OTG_dev
+                0x200052a4                Buffer
+                0x200052ac                RCC_Clocks
+                0x200052bc                Audio
+                0x2000543c                . = ALIGN (0x4)
+                0x2000543c                __bss_end__ = .
+                0x2000543c                _ebss = __bss_end__
 
-.heap           0x20005438        0x0
-                0x20005438                __end__ = .
-                0x20005438                _end = __end__
-                0x20005438                end = __end__
+.heap           0x2000543c        0x0
+                0x2000543c                __end__ = .
+                0x2000543c                _end = __end__
+                0x2000543c                end = __end__
  *(.heap*)
-                0x20005438                __HeapLimit = .
+                0x2000543c                __HeapLimit = .
 
-.co_stack       0x20005438     0x1000 load address 0x0801524c
-                0x20005438                . = ALIGN (0x8)
+.co_stack       0x2000543c     0x1004 load address 0x08015220
+                0x20005440                . = ALIGN (0x8)
+ *fill*         0x2000543c        0x4 
  *(.co_stack .co_stack.*)
- .co_stack      0x20005438     0x1000 ..\obj\startup_stm32f4xx.o
-                0x20005438                pulStack
+ .co_stack      0x20005440     0x1000 ..\obj\startup_stm32f4xx.o
+                0x20005440                pulStack
                 0x20020000                __StackTop = (ORIGIN (ram) + 0x20000)
-                0x2001f000                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x2001effc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 0x20020000                PROVIDE (__stack, __StackTop)
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
 LOAD ..\obj\stm32f4_discovery.o
