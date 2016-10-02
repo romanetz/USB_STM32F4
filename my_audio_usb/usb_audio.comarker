@@ -16,8 +16,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="D:\MyDoc\Projects\MyProgramms\Controller_F913_Test_PO\ADC.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="true" persistant="true" registered="true">
@@ -36,8 +36,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="D:\MyDoc\Projects\MyProgramms\Controller_F913_Test_PO\ADC.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
 </breakpoints>

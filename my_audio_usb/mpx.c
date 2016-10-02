@@ -6,8 +6,13 @@
 #include "main.h"
 #include "mpx.h"
 #include "arm_math.h"
+#include "resample.h"
 
-#define RDS
+
+#define CH_LEFT		0
+#define CH_RIGHT	1
+
+//#define RDS
 #define Zljko
 //#define romanetz
 #define RDS_PI 0x7EB0
@@ -52,17 +57,17 @@ arm_fir_instance_f32 * fir_ptr_R=&fir_R;
 
 float Lbuf[48] __attribute__ ((aligned(4), section("RAM2")));
 float Lbuf2[48] __attribute__ ((aligned(4), section("RAM2")));
-float L_interp_buf[384] __attribute__ ((aligned(4),section("RAM2")));
+float L_interp_buf[768] __attribute__ ((aligned(4),section("RAM2")));
 float Rbuf[48] __attribute__ ((aligned(4),section("RAM2")));
 float Rbuf2[48] __attribute__ ((aligned(4),section("RAM2")));
-float R_interp_buf[384] __attribute__ ((aligned(4),section("RAM2")));
+float R_interp_buf[768] __attribute__ ((aligned(4),section("RAM2")));
 float interp_coeffs_ram[interp_coeff_size] __attribute__ ((aligned(4),section("RAM2")));
 float fir_coeffs_ram[interp_coeff_size] __attribute__ ((aligned(4),section("RAM2")));
 
-float MPX_buf[768] __attribute__ ((aligned(4)));		// bytes
-uint16_t DAC_buf[768] __attribute__ ((aligned(4)));		//4608 bytes
-s16 FB_buf[768] __attribute__ ((aligned(4)));		//1536 bytes
-uint32_t DDS_buf[768] __attribute__ ((aligned(4)));		//4608 bytes
+float MPX_buf[1536] __attribute__ ((aligned(4)));		// bytes
+uint16_t DAC_buf[1536] __attribute__ ((aligned(4)));		//4608 bytes
+s16 FB_buf[1536] __attribute__ ((aligned(4)));		//1536 bytes
+uint32_t DDS_buf[1536] __attribute__ ((aligned(4)));		//4608 bytes
 
 #ifndef old_interp
 float32_t interp_state_L[48+320/8-1] __attribute__ ((aligned(4),section("RAM2")));
@@ -75,6 +80,11 @@ float32_t fir_state_L[48+100-1] __attribute__ ((aligned(4),section("RAM2")));
 float32_t fir_state_R[48+100-1] __attribute__ ((aligned(4),section("RAM2")));
 volatile uint8_t audio_buffer_fill;
 volatile uint8_t FM_buffer_fill;
+
+float InBuffer[2][48] __attribute__ ((aligned(4), section("RAM2")));
+
+int32_t INT_InBuffer[2][48]__attribute__ ((aligned(4), section("RAM2")));
+int32_t INT_OutBuffer[2][768]__attribute__ ((aligned(4), section("RAM2")));
 
 void MPX_Gen (uint32_t samplerate,uint8_t multiplier,s16 * inbuf, float * outbuf, uint16_t size);
 void DAC_normalise(float * inbuf,uint16_t * outbuf,s16 * fbbuf, uint16_t size);
@@ -184,13 +194,13 @@ fir_coeffs_ram[o]=fir_coeffs[o];
 	arm_fir_interpolate_init_f32(interp_ptr_L,
 		 L,
 		 interp_coeff_size,
-		 (float32_t*) &interp_coeffs_ram[0],
+		 (float32_t*) &interp_coeffs[0],
 		 (float32_t*) &interp_state_L[0],
 		  bsize);
 arm_fir_interpolate_init_f32(interp_ptr_R,
 		 L,
 		  interp_coeff_size,
-		  (float32_t*) &interp_coeffs_ram[0],
+		  (float32_t*) &interp_coeffs[0],
 		  (float32_t*) &interp_state_R[0],
 		  bsize);
 
@@ -235,7 +245,7 @@ for (j=0;j<16;j++)
 #else
 			m_volRDS = 1;
 #endif
-
+			InitResample();
 };
 
 //MPX signal is described as:
@@ -247,7 +257,7 @@ int32_t Volume_curr=99;
 float a=0.08;
 float b=0.45;
 float c=1/32768.0;
-float d=0.08;
+float dd=0.08;
 /*
 Numerator:
  1 A0
@@ -258,8 +268,8 @@ Denominator:
 0.08721923828125 B1
 0.0989990234375 B2
 */
-uint32_t dphase=19000*11184;
-uint32_t dphase_11875 = 13281962;
+const uint32_t dphase=19000*11184/2;
+const uint32_t dphase_11875 = 13281962;
 
 #ifdef RDS
 static volatile int32_t sin57khz,sinRDS;
@@ -479,7 +489,7 @@ void MPX_Gen(uint32_t samplerate, uint8_t multiplier, s16 * inbuf, float * outbu
 		L = *(s16 *) inbuf++;
 		R = *(s16 *) inbuf++;
 
-		#ifdef old_interp
+
 		xx_L[2] = xx_L[1];
 		xx_L[1] = xx_L[0];
 		xx_L[0] = (float) L;
@@ -497,13 +507,27 @@ void MPX_Gen(uint32_t samplerate, uint8_t multiplier, s16 * inbuf, float * outbu
 
 		Lbuf[cnt] = yy_L[0];
 		Rbuf[cnt] = yy_R[0];
-		#else
+		/*#else
 		Lbuf[cnt] = (float) L;
 		Rbuf[cnt] = (float) R;
-		#endif
+		#endif*/
+		//INT_InBuffer[CH_LEFT][cnt] = (int32_t)L;// Lbuf2[cnt];
+		//INT_InBuffer[CH_RIGHT][cnt] = (int32_t)R;// Rbuf2[cnt];
 
 		cnt++;
 	};
+
+	arm_fir_f32(fir_ptr_L, (float32_t *) &Lbuf[0], (float32_t *) &Lbuf2[0], size);
+	arm_fir_f32(fir_ptr_R, (float32_t *) &Rbuf[0], (float32_t *) &Rbuf2[0], size);
+
+	cnt = 0;
+	while (cnt < size) {
+		INT_InBuffer[CH_LEFT][cnt] = (int32_t) Lbuf2[cnt];
+		INT_InBuffer[CH_RIGHT][cnt] = (int32_t) Rbuf2[cnt];
+		cnt++;
+	}
+
+
 
 //15k filter
 #ifdef old_interp
@@ -515,10 +539,13 @@ void MPX_Gen(uint32_t samplerate, uint8_t multiplier, s16 * inbuf, float * outbu
 	arm_fir_interpolate_f32(interp_ptr_R, (float32_t *) &Rbuf2[0], (float32_t *) &R_interp_buf[0], size);
 #else
 	//interpolation polyphase filter
-	arm_fir_interpolate_f32(interp_ptr_L, (float32_t *) &Lbuf[0], (float32_t *) &L_interp_buf[0], size);
-	arm_fir_interpolate_f32(interp_ptr_R, (float32_t *) &Rbuf[0], (float32_t *) &R_interp_buf[0], size);
+//	arm_fir_interpolate_f32(interp_ptr_L, (float32_t *) &Lbuf[0], (float32_t *) &L_interp_buf[0], size);
+//	arm_fir_interpolate_f32(interp_ptr_R, (float32_t *) &Rbuf[0], (float32_t *) &R_interp_buf[0], size);
 
 #endif
+
+	ResampleProccess(&INT_InBuffer[CH_LEFT][0], &INT_InBuffer[CH_RIGHT][0], &INT_OutBuffer[CH_LEFT][0], &INT_OutBuffer[CH_RIGHT][0]);
+
 	cnt = 0;
 
 	while (cnt < (size * multiplier)) {
@@ -613,10 +640,15 @@ void MPX_Gen(uint32_t samplerate, uint8_t multiplier, s16 * inbuf, float * outbu
 
 		dsb_float = sin38khz * c;
 #ifdef RDS
-		mpx_float = (float) sin19khz * a + (L_interp_buf[cnt] - R_interp_buf[cnt]) * b * dsb_float + (L_interp_buf[cnt] + R_interp_buf[cnt]) * b\
-				+ (float) m_RDS.RDSbaseBand * (float) sin57khz * c*m_volRDS;
+		mpx_float = (float) sin19khz * a; //+ (float) m_RDS.RDSbaseBand * (float) sin57khz * c*m_volRDS + (L_interp_buf[cnt] - R_interp_buf[cnt]) * b * dsb_float + (L_interp_buf[cnt] + R_interp_buf[cnt]) * b;
+		//mpx_float = (L_interp_buf[cnt] + R_interp_buf[cnt]) * b;
 #else
-		mpx_float = (float) sin19khz * a + (L_interp_buf[cnt] - R_interp_buf[cnt]) * b * dsb_float + (L_interp_buf[cnt] + R_interp_buf[cnt]) * b;
+//		mpx_float = (float) sin19khz * a + (L_interp_buf[cnt] - R_interp_buf[cnt]) * b * dsb_float + (L_interp_buf[cnt] + R_interp_buf[cnt]) * b;
+
+		mpx_float = (float) sin19khz * a\
+		+ (float)((INT_OutBuffer[CH_LEFT][cnt] - INT_OutBuffer[CH_RIGHT][cnt]) * dsb_float\
+				+ (float) (INT_OutBuffer[CH_LEFT][cnt] + INT_OutBuffer[CH_RIGHT][cnt]));
+
 
 		#endif
 		//no 8 x over
@@ -630,7 +662,7 @@ void MPX_Gen(uint32_t samplerate, uint8_t multiplier, s16 * inbuf, float * outbu
 }
 #endif
 
-float dev=447335/32768.0; //75000*2^32/(80E+06*9)
+float dev=447335/32768.0;//29826/32768.0;//447335/32768.0; //75000*2^32/(80E+06*9)
 
 void FM_MPX(uint32_t f0code,float * inbuf,uint16_t size, uint32_t * outbuf)
 {int32_t tmp;

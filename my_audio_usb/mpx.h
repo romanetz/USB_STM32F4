@@ -785,7 +785,7 @@ const s16 LUT[16384]={
 //#define old_interp
 
 
-#ifdef old_interp
+//#ifdef old_interp
 #define interp_coeff_size 192
 
 const float interp_coeffs[interp_coeff_size]={
@@ -982,6 +982,7 @@ const float interp_coeffs[interp_coeff_size]={
 		-6.10352E-05,
 		-6.10352E-05
 };
+/*
 #else
 
 #define interp_coeff_size 320
@@ -1037,7 +1038,7 @@ const float interp_coeffs[interp_coeff_size]={ -0.00018614282972003, -0.00023267
  6.20476099066765E-05, -7.75595123833457E-05, -0.000178386878481695, -0.000240434488388372, -0.000263702342103375, -0.000255946390865041,
  -0.000232678537150037, -0.00018614282972003 };
 #endif
-
+*/
 const float fir_coeffs[100]={
 0.000043520435886339965             ,
 0.00019555784538760162              ,

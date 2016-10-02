@@ -41,20 +41,20 @@
 __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 s16 Audio[192] __attribute__ ((aligned(4)));//384 samples=768 bytes. in order LRLR...
 s16 Audio2[192] __attribute__ ((aligned(4)));//384 samples=768 bytes. in order LRLR...
-extern float MPX_buf[4608] __attribute__ ((aligned(4)));	//4608*4 bytes MPX signal buffer
-extern uint16_t DAC_buf[4608] __attribute__ ((aligned(4)));		//4608*4 bytes
-extern uint32_t DDS_buf[4608] __attribute__ ((aligned(4)));		//4608 bytes
+extern float MPX_buf[1536] __attribute__ ((aligned(4)));	//4608*4 bytes MPX signal buffer
+extern uint16_t DAC_buf[1536] __attribute__ ((aligned(4)));		//4608*4 bytes
+extern uint32_t DDS_buf[1536] __attribute__ ((aligned(4)));		//4608 bytes
 extern const s16 LUT[16384];
 extern volatile uint8_t audio_buffer_fill;
 volatile uint8_t * xbuf;
 uint32_t fs=USBD_AUDIO_FREQ;
-uint8_t mult_factor=8;
+uint8_t mult_factor=16;
 extern volatile uint8_t mpx_buff_fill=0;
 uint16_t PrescalerValue = 0;
 uint16_t bufsize=AUDIO_OUT_PACKET/2;
 __IO uint8_t UserButtonPressed = 0;
 extern float b;
-extern float d;
+extern float dd;
 extern float a;
 extern uint8_t use_preemph;
 extern uint32_t dphase;
@@ -127,7 +127,7 @@ int main(void)
 		  //if (UserButtonPressed&2)
 		  //Sin_Gen (&Audio2[0],fs,fleft,fright,bufsize/2);
 		  MPX_Gen (fs,mult_factor,&Audio2[0],MPX_buf,bufsize/2);
-	      DAC_normalise(&MPX_buf[0],&DAC_buf[0],mult_factor*bufsize/2);
+	      //DAC_normalise(&MPX_buf[0],&DAC_buf[0],mult_factor*bufsize/2);
 	      FM_MPX(f0,&MPX_buf[0],mult_factor*bufsize/2, &DDS_buf[0]);
 	      mpx_buff_fill=0;
 
@@ -137,7 +137,7 @@ int main(void)
 		  //if (UserButtonPressed&2)
 		  //Sin_Gen (&Audio2[96],fs,fleft,fright,bufsize/2);
 		  MPX_Gen (fs,mult_factor,&Audio2[bufsize],&MPX_buf[mult_factor*bufsize/2],bufsize/2);
-	  	  DAC_normalise(&MPX_buf[mult_factor*bufsize/2],&DAC_buf[mult_factor*bufsize/2],mult_factor*bufsize/2);
+	  	  //DAC_normalise(&MPX_buf[mult_factor*bufsize/2],&DAC_buf[mult_factor*bufsize/2],mult_factor*bufsize/2);
 	      FM_MPX(f0,&MPX_buf[mult_factor*bufsize/2],mult_factor*bufsize/2, &DDS_buf[mult_factor*bufsize/2]);
 	  	  mpx_buff_fill=0;
 
@@ -147,8 +147,8 @@ if (VCP_get_char(&test[0]))
   {STM_EVAL_LEDToggle(LED6);
 	switch (test[0])
   {
-  case 'S': d+=0.01; sprintf(textbuf,"+S %f\n\r",d); VCP_send_str(textbuf); break;
-  case 's': d-=0.01; sprintf(textbuf,"-S %f\n\r",d); VCP_send_str(textbuf); break;
+  case 'S': dd+=0.01; sprintf(textbuf,"+S %f\n\r",dd); VCP_send_str(textbuf); break;
+  case 's': dd-=0.01; sprintf(textbuf,"-S %f\n\r",dd); VCP_send_str(textbuf); break;
   case 'M': b+=0.01; sprintf(textbuf,"+M %f\n\r",b); VCP_send_str(textbuf); break;
   case 'm': b-=0.01; sprintf(textbuf,"-M %f\n\r",b); VCP_send_str(textbuf); break;
   case 'F': f0+=596523; sprintf(textbuf,"+Carrier frequency %d\n\r",f0); VCP_send_str(textbuf); break;
@@ -161,7 +161,7 @@ if (VCP_get_char(&test[0]))
   case 'd': dev-=5965.23235/32768.0; sprintf(textbuf,"-Carrier dev %f\n\r",a); VCP_send_str(textbuf); break;
  // case 'E': use_preemph=1; sprintf(textbuf,"Preemphasis on\n\r"); VCP_send_str(textbuf); break;
 //  case 'e': use_preemph=0; sprintf(textbuf,"Preemphasis off\n\r"); VCP_send_str(textbuf); break;
-  case ' ': sprintf(textbuf,"current: S: %f M: %f\n\r",d,b); VCP_send_str(textbuf); break;
+  case ' ': sprintf(textbuf,"current: S: %f M: %f\n\r",dd,b); VCP_send_str(textbuf); break;
   };
 memset(test,0,30);
   };

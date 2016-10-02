@@ -88,6 +88,7 @@ volatile int32_t maxgap, mingap;
 int8_t shift = 0;
 static volatile uint32_t  usbd_cdc_AltSet  = 0;
 
+volatile uint32_t counter=0,old_counter=0;
 __ALIGN_BEGIN uint8_t CmdBuff[VIRTUAL_COM_PORT_INT_SIZE ] __ALIGN_END ;
 __ALIGN_BEGIN uint8_t USB_Rx_Buffer   [VIRTUAL_COM_PORT_DATA_SIZE] __ALIGN_END ;
 #define APP_TX_BUF_SIZE 2048
@@ -565,6 +566,8 @@ static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
   /* 09 byte*/
 } ;
 #endif
+
+//typedef USB_CONFIGURATION_DESCRIPTOR_t
 
 #ifdef sync
 static uint8_t usbd_audio_CfgDesc[AUDIO_CONFIG_DESC_SIZE] =
@@ -1510,6 +1513,7 @@ static uint8_t  usbd_audio_DataOut (void *pdev, uint8_t epnum)
                           AUDIO_OUT_PACKET,          /* Number of samples in Bytes */
                           AUDIO_CMD_PLAY);           /* Command to be processed */
     }
+    counter+=1;
   };
 	if (epnum==CDC_OUT_DATA_EP)
 	{  curr_length=USBD_GetRxCount (pdev,epnum);
@@ -1537,6 +1541,10 @@ static uint8_t  usbd_audio_SOF (void *pdev)
 static uint16_t n;
 USB_OTG_DSTS_TypeDef  FS_DSTS;
 static uint32_t FrameCount = 0;
+
+if ((counter-old_counter)==0)
+		PlayFlag=0;
+		old_counter=counter;
   /* Check if there are available data in stream buffer.
     In this function, a single variable (PlayFlag) is used to avoid software delays.
     The play operation must be executed as soon as possible after the SOF detection. */
@@ -1547,11 +1555,7 @@ if (usbd_audio_AltSet==1)
 	{
 	gap=(IsocOutWrPtr-IsocOutRdPtr);
 	tmpxx=(DMA1_Stream7->NDTR)%96;
-	corr=(DMA1_Stream6->NDTR)%384;
-	oldgap=(DMA1_Stream0->NDTR)%384;
 	if (tmpxx==0) tmpxx+=96;
-	if (corr==0) corr+=384;
-	if (oldgap==0) oldgap+=384;
 	if (gap<0) gap+=(TOTAL_OUT_BUF_SIZE);
 	shift=-(gap+tmpxx*2-(TOTAL_OUT_BUF_SIZE/2))>>3;
 	};
@@ -1572,9 +1576,7 @@ if (usbd_audio_AltSet==1)
 
 	if ((!flag))
 		{
-			FS_DSTS.d32 = USB_OTG_READ_REG32(&(((USB_OTG_CORE_HANDLE*)pdev)->regs.DREGS->DSTS));
-			if (((FS_DSTS.b.soffn)&0x1) == dpid)
-				{//feedback_data=722534;
+					{//feedback_data=722534;
 					DCD_EP_Tx (pdev, AUDIO_IN_EP, (uint8_t *) &feedback_data, 3);
 					flag=1;
 				};
@@ -1609,17 +1611,10 @@ static uint8_t  usbd_audio_OUT_Incplt (void  *pdev)
 
 static uint8_t  usbd_audio_IN_Incplt (void  *pdev)
 {
-	//This ISR is executed every time when IN token received with "wrong" PID. It's necessary
-	//to flush IN EP (feedback EP), get parity value from DSTS, and store this info for SOF handler.
-	//SOF handler should skip one frame with "wrong" PID and attempt a new transfer a frame later.
-
-	USB_OTG_DSTS_TypeDef  FS_DSTS;
-	  FS_DSTS.d32 = USB_OTG_READ_REG32(&(((USB_OTG_CORE_HANDLE*)pdev)->regs.DREGS->DSTS));
-	  dpid=(FS_DSTS.b.soffn)&0x1;
-	if (flag)
-	   {flag=0;
-	   	DCD_EP_Flush(pdev,AUDIO_IN_EP);
-	   };
+	DCD_EP_Flush(pdev,AUDIO_IN_EP);
+	STM_EVAL_LEDToggle(LED6);
+	//feedback_data=0X0C0077;
+	DCD_EP_Tx (pdev, AUDIO_IN_EP, (uint8_t *) &feedback_data, 3);
 	return USBD_OK;
 }
 
@@ -1686,7 +1681,6 @@ void update_audio_buf(void)
 
 if(PlayFlag == 1)
 {
-// First time: IsocOutRdPtr = IsocOutBuff
 	res=AUDIO_OUT_fops.AudioCmd((uint8_t*)(IsocOutRdPtr),  /* Samples buffer pointer */
 	                    AUDIO_OUT_PACKET,          /* Number of samples in Bytes */
 	                    AUDIO_CMD_PLAY);           /* Command to be processed */
@@ -1696,13 +1690,11 @@ if(PlayFlag == 1)
 	IsocOutRdPtr = IsocOutBuff;
 	}
 }
-else {
-	IsocOutRdPtr = IsocOutBuff;
-	IsocOutWrPtr = IsocOutBuff;
-	res=AUDIO_OUT_fops.AudioCmd((uint8_t*)(IsocOutRdPtr),  /* Samples buffer pointer */
-	                    AUDIO_OUT_PACKET,          /* Number of samples in Bytes */
-	                    AUDIO_CMD_PAUSE);           /* Command to be processed */
-}
+/*else {
+/*	res=AUDIO_OUT_fops.AudioCmd((uint8_t*)(IsocOutRdPtr),  /* Samples buffer pointer */
+//	                    AUDIO_OUT_PACKET,          /* Number of samples in Bytes */
+	//                    AUDIO_CMD_PAUSE);           /* Command to be processed */
+//}
 
 }
 

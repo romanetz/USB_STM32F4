@@ -33,21 +33,10 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define CURSOR_STEP     7
 
-
-
-extern const int16_t sinebuf2[96];
-
-extern uint8_t Buffer[6];
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern __IO uint8_t DemoEnterCondition;
-uint8_t Counter  = 0x00;
-extern int8_t X_Offset;
-extern int8_t Y_Offset;
 extern __IO uint8_t UserButtonPressed;
-__IO uint8_t TempAcceleration = 0;
 /* Private function prototypes -----------------------------------------------*/
 extern USB_OTG_CORE_HANDLE           USB_OTG_dev;
 extern uint32_t USBD_OTG_ISR_Handler (USB_OTG_CORE_HANDLE *pdev);
@@ -69,15 +58,15 @@ void NMI_Handler(void)
   * @param  None
   * @retval None
   */
-/*
+
 void HardFault_Handler(void)
 {
   /* Go to infinite loop when Hard Fault exception occurs */
-/*  while (1)
+  while (1)
   {
   }
 }
-*/
+
 /**
   * @brief  This function handles Memory Manage exception.
   * @param  None

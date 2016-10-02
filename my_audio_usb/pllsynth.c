@@ -197,7 +197,7 @@ void ad9951_init(void)
 	int ret;
 	uint64_t tmp64;
 	uint8_t i;
-	uint32_t carrier=101200;
+	uint32_t carrier=100200;
 
 	cfr[0] = CFR1;
 	cfr[1] = 0;

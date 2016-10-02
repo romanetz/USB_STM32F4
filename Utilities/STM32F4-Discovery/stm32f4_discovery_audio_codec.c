@@ -2014,7 +2014,7 @@ void TMR4_Config(uint8_t * buf, uint32_t len)
 	  //GPIO_PinAFConfig(GPIOD, GPIO_PinSource13, GPIO_AF_TIM4);
       RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
 	  //Time base configuration
-	  TIM_TimeBaseStructure.TIM_Period = 31;
+	  TIM_TimeBaseStructure.TIM_Period = 15;
 	  TIM_TimeBaseStructure.TIM_Prescaler = 0;
 	  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 	  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -2022,11 +2022,11 @@ void TMR4_Config(uint8_t * buf, uint32_t len)
 
 	  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
   	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-  	  TIM_OCInitStructure.TIM_Pulse = 25; // I/O update pulse length 31-28 periods of master clock
+  	  TIM_OCInitStructure.TIM_Pulse = 15; // I/O update pulse length 31-28 periods of master clock
   	  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;
   	  TIM_OC3Init(TIM4, &TIM_OCInitStructure);
 
-  	  TIM_OCInitStructure.TIM_Pulse = 31; // I/O update pulse length 31-30 periods of master clock
+  	  TIM_OCInitStructure.TIM_Pulse = 15; // I/O update pulse length 31-30 periods of master clock
   	  TIM_OC1Init(TIM4, &TIM_OCInitStructure);
 	  TIM_DMACmd(TIM4,TIM_DMA_CC1,ENABLE);
 
@@ -2091,7 +2091,7 @@ void TMR3_Config(void)
       RCC_AHB1PeriphClockCmd(AUDIO_DAC_DMA_CLOCK, ENABLE);
 
       //Time base configuration
-	  TIM_TimeBaseStructure.TIM_Period = 5;
+	  TIM_TimeBaseStructure.TIM_Period = 2;
 	  TIM_TimeBaseStructure.TIM_Prescaler = 0;
 	  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 	  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;

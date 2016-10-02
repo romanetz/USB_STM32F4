@@ -1,209 +1,214 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -g2 -Wall -O3 -c -DSTM32F407ZG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -DUSB_OTG_FS_CORE -DUSE_USB_OTG_FS -DUSE_OTG_MODE -D__FPU_USED -DARM_MATH_CM4 -D__VFP_FP__ -D__FPU_PRESENT -I..\..\..\..\..\..\..\..\..\4\Libraries\CMSIS\Include -I..\..\..\..\..\..\..\..\..\4\my_audio_usb\semihosting -I..\..\..\..\..\..\..\..\..\4\Libraries\STM32_USB_Device_Library\Class\audio\inc -I..\..\..\..\..\..\..\..\..\4\Utilities\STM32F4-Discovery -I..\..\..\..\..\..\..\..\..\4\Libraries\STM32_USB_Device_Library\Core\inc -I..\..\..\..\..\..\..\..\..\4\Libraries\STM32_USB_OTG_Driver\inc -I..\..\..\..\..\..\..\..\..\4\Libraries\CMSIS -I..\..\..\..\..\..\..\..\..\4\Libraries -I..\..\..\..\..\..\..\..\..\4\Libraries\CMSIS\Include -I..\..\..\..\..\..\..\..\..\4 -I..\..\..\..\..\..\..\..\..\4\Libraries\CMSIS -I..\..\..\..\..\..\..\..\..\4\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\..\..\..\4\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\..\..\..\..\..\..\4\my_audio_usb">
-      <target file="stm32f4xx_cryp_aes.o" lastModified="1522ca76652">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -g2 -Wall -O3 -c -DSTM32F407ZG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -DUSB_OTG_FS_CORE -DUSE_USB_OTG_FS -DUSE_OTG_MODE -D__FPU_USED -DARM_MATH_CM4 -D__VFP_FP__ -D__FPU_PRESENT -IH:\4bkup_branch\Libraries -IH:\4bkup_branch\Libraries\CMSIS\Include -IH:\4bkup_branch\Libraries\CMSIS -IH:\4bkup_branch\Libraries\CMSIS\ST\STM32F4xx\Include -IH:\4bkup_branch\Libraries\CMSIS -IH:\4bkup_branch\my_audio_usb -IH:\4bkup_branch\Libraries\STM32_USB_Device_Library\Class\audio\inc -IH:\4bkup_branch\Libraries\STM32F4xx_StdPeriph_Driver\inc -IH:\4bkup_branch\Libraries\CMSIS\Include -IH:\4bkup_branch\Libraries\STM32_USB_Device_Library\Core\inc -IH:\4bkup_branch\Libraries\STM32_USB_OTG_Driver\inc -IH:\4bkup_branch\Utilities\STM32F4-Discovery">
+      <target file="resample.o" lastModified="15786166e53">
+         <source file="..\..\..\resample.c" lastModified="1547cf54f47"/>
+      </target>
+      <target file="stm32f4xx_cryp_aes.o" lastModified="157861667a3">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_aes.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_fsmc.o" lastModified="1522ca777d7">
+      <target file="stm32f4xx_fsmc.o" lastModified="15786168147">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c" lastModified="1334894f710"/>
       </target>
-      <target file="syscalls.o" lastModified="1522ca77bf5">
+      <target file="syscalls.o" lastModified="1578616874d">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="1515c034f26"/>
       </target>
-      <target file="usbd_usr.o" lastModified="1522ca76726">
+      <target file="usbd_usr.o" lastModified="1578616690f">
          <source file="..\..\..\usbd_usr.c" lastModified="14c3d465de0"/>
       </target>
-      <target file="stm32f4_discovery.o" lastModified="1522ca76d38">
+      <target file="stm32f4_discovery.o" lastModified="15786167356">
          <source file="..\..\..\..\Utilities\STM32F4-Discovery\stm32f4_discovery.c" lastModified="135a6018560"/>
       </target>
-      <target file="mpx.o" lastModified="1522ca78302">
-         <source file="..\..\..\mpx.c" lastModified="1522c14efe4"/>
+      <target file="mpx.o" lastModified="15786168ef4">
+         <source file="..\..\..\mpx.c" lastModified="15481697b20"/>
       </target>
-      <target file="stm32f4_discovery_audio_codec.o" lastModified="1522ca7685d">
-         <source file="..\..\..\..\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.c" lastModified="151789badcf"/>
+      <target file="stm32f4_discovery_audio_codec.o" lastModified="15786166b15">
+         <source file="..\..\..\..\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.c" lastModified="154808c80a0"/>
       </target>
-      <target file="misc.o" lastModified="1522ca7863c">
+      <target file="misc.o" lastModified="157861693e4">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_fast_q31.o" lastModified="1522ca77f6b">
+      <target file="arm_fir_fast_q31.o" lastModified="15786168cf2">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_fast_q31.c" lastModified="1501e2c6f40"/>
       </target>
-      <target file="stm32f4xx_cryp.o" lastModified="1522ca77666">
+      <target file="stm32f4xx_cryp.o" lastModified="15786167f4d">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_init_q15.o" lastModified="1522ca770ed">
+      <target file="arm_fir_init_q15.o" lastModified="15786167932">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_init_q15.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="sh_cmd.o" lastModified="1522ca77b40">
-         <source file="..\..\..\semihosting\sh_cmd.s" lastModified="14825262d20"/>
-      </target>
-      <target file="usbd_ioreq.o" lastModified="1522ca78a27">
+      <target file="usbd_ioreq.o" lastModified="15786169a1f">
          <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_ioreq.c" lastModified="1334894ef40"/>
       </target>
-      <target file="stm32f4xx_cryp_des.o" lastModified="1522ca775ce">
+      <target file="stm32f4xx_cryp_des.o" lastModified="15786167e6a">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_des.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_interpolate_q15.o" lastModified="1522ca77702">
+      <target file="arm_fir_interpolate_q15.o" lastModified="15786168030">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_q15.c" lastModified="1501e2c6770"/>
       </target>
-      <target file="usbd_req.o" lastModified="1522ca77e03">
+      <target file="usbd_req.o" lastModified="15786168abd">
          <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_req.c" lastModified="1334894ef40"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="1522ca78e7a">
+      <target file="stm32f4xx_tim.o" lastModified="1578616a0cf">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c" lastModified="1334894f710"/>
       </target>
-      <target file="usbd_audio_out_if.o" lastModified="1522ca76516">
+      <target file="usbd_audio_out_if.o" lastModified="1578616658d">
          <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\audio\src\usbd_audio_out_if.c" lastModified="15110aa02a0"/>
       </target>
-      <target file="stm32f4xx_iwdg.o" lastModified="1522ca76ddd">
+      <target file="stm32f4xx_iwdg.o" lastModified="1578616746b">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c" lastModified="1334894f710"/>
       </target>
-      <target file="usbd_desc.o" lastModified="1522ca77517">
+      <target file="usbd_desc.o" lastModified="15786167da4">
          <source file="..\..\..\usbd_desc.c" lastModified="15161881ea7"/>
       </target>
-      <target file="stm32f4xx_exti.o" lastModified="1522ca78523">
+      <target file="stm32f4xx_exti.o" lastModified="15786169267">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="1522ca779dc">
+      <target file="stm32f4xx_gpio.o" lastModified="15786168451">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_init_f32.o" lastModified="1522ca7733b">
+      <target file="arm_fir_init_f32.o" lastModified="15786167b12">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_init_f32.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="usb_bsp.o" lastModified="1522ca77d45">
-         <source file="..\..\..\usb_bsp.c" lastModified="14826f2a7f0"/>
+      <target file="usb_bsp.o" lastModified="1578616897c">
+         <source file="..\..\..\usb_bsp.c" lastModified="15786080fcf"/>
       </target>
-      <target file="arm_fir_interpolate_f32.o" lastModified="1522ca77906">
+      <target file="arm_fir_interpolate_f32.o" lastModified="15786168306">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_f32.c" lastModified="1501e2c6770"/>
       </target>
-      <target file="usbd_core.o" lastModified="1522ca76e73">
+      <target file="usbd_core.o" lastModified="15786167551">
          <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Core\src\usbd_core.c" lastModified="150e2f78620"/>
       </target>
-      <target file="arm_fir_init_q31.o" lastModified="1522ca77c3b">
+      <target file="arm_fir_init_q31.o" lastModified="157861687bf">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_init_q31.c" lastModified="1501e2c6f40"/>
       </target>
-      <target file="stm32f4xx_usart.o" lastModified="1522ca76988">
+      <target file="stm32f4xx_usart.o" lastModified="15786166d01">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c" lastModified="1334894fee0"/>
       </target>
-      <target file="arm_fir_interpolate_q31.o" lastModified="1522ca785e6">
+      <target file="arm_fir_interpolate_q31.o" lastModified="1578616934a">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_q31.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="stm32f4xx_rtc.o" lastModified="1522ca789b0">
+      <target file="stm32f4xx_rtc.o" lastModified="15786169972">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_hash_sha1.o" lastModified="1522ca768d4">
+      <target file="stm32f4xx_hash_sha1.o" lastModified="15786166bdc">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_sha1.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1522ca7702b">
+      <target file="stm32f4xx_rcc.o" lastModified="157861677f8">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_dac.o" lastModified="1522ca76c43">
+      <target file="stm32f4xx_dac.o" lastModified="15786167254">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_can.o" lastModified="1522ca76ab5">
+      <target file="stm32f4xx_can.o" lastModified="15786166fae">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_can.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_pwr.o" lastModified="1522ca769ed">
+      <target file="stm32f4xx_pwr.o" lastModified="15786166dad">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_wwdg.o" lastModified="1522ca76b09">
+      <target file="stm32f4xx_wwdg.o" lastModified="1578616704e">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c" lastModified="1334894fee0"/>
       </target>
-      <target file="stm32f4xx_rng.o" lastModified="1522ca784be">
+      <target file="stm32f4xx_rng.o" lastModified="157861691c1">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rng.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_adc.o" lastModified="1522ca771a0">
+      <target file="stm32f4xx_adc.o" lastModified="15786167a5a">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_flash.o" lastModified="1522ca77b36">
+      <target file="stm32f4xx_flash.o" lastModified="15786168630">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c" lastModified="1334894f710"/>
       </target>
-      <target file="usbd_audio_core.o" lastModified="1522ca78bf8">
-         <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\audio\src\usbd_audio_core.c" lastModified="1517b76a74c"/>
+      <target file="usbd_audio_core.o" lastModified="157861e13db">
+         <source file="..\..\..\..\Libraries\STM32_USB_Device_Library\Class\audio\src\usbd_audio_core.c" lastModified="157861e0ed3"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="1522ca76c75">
-         <source file="..\..\..\startup_stm32f4xx.c" lastModified="143138686a0"/>
-      </target>
-      <target file="usb_dcd.o" lastModified="1522ca786ee">
-         <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_dcd.c" lastModified="1334894f710"/>
-      </target>
-      <target file="stm32f4xx_cryp_tdes.o" lastModified="1522ca78c7f">
+      <target file="stm32f4xx_cryp_tdes.o" lastModified="15786169dda">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_dcmi.o" lastModified="1522ca773c5">
-         <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dcmi.c" lastModified="1334894f710"/>
+      <target file="usb_dcd.o" lastModified="15786169512">
+         <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_dcd.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="1522ca77cd6">
+      <target file="startup_stm32f4xx.o" lastModified="157861672af">
+         <source file="..\..\..\startup_stm32f4xx.c" lastModified="143138686a0"/>
+      </target>
+      <target file="stm32f4xx_dma.o" lastModified="157861688b8">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_interpolate_init_q15.o" lastModified="1522ca78ccd">
+      <target file="stm32f4xx_dcmi.o" lastModified="15786167bd6">
+         <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dcmi.c" lastModified="1334894f710"/>
+      </target>
+      <target file="arm_fir_interpolate_init_q15.o" lastModified="15786169e54">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_init_q15.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="pllsynth.o" lastModified="15279c28c92">
-         <source file="..\..\..\pllsynth.c" lastModified="15279c27d3c"/>
+      <target file="pllsynth.o" lastModified="15786169b20">
+         <source file="..\..\..\pllsynth.c" lastModified="15479b01cdd"/>
       </target>
-      <target file="printf.o" lastModified="1522ca772f6">
-         <source file="..\..\..\stdio\printf.c" lastModified="1516ff6ea70"/>
-      </target>
-      <target file="stm32f4xx_crc.o" lastModified="1522ca76d8a">
+      <target file="stm32f4xx_crc.o" lastModified="157861673e2">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_crc.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_f32.o" lastModified="1522ca7786a">
+      <target file="printf.o" lastModified="157861914a4">
+         <source file="..\..\..\stdio\printf.c" lastModified="15786172dd0"/>
+      </target>
+      <target file="arm_fir_f32.o" lastModified="15786168225">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_f32.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="stm32f4xx_sdio.o" lastModified="1522ca7659e">
+      <target file="stm32f4xx_sdio.o" lastModified="1578616667c">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_fast_q15.o" lastModified="1522ca7744d">
+      <target file="arm_fir_fast_q15.o" lastModified="15786167ca3">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_fast_q15.c" lastModified="1501e2c6f40"/>
       </target>
-      <target file="stm32f4xx_it.o" lastModified="1522ca770a4">
-         <source file="..\..\..\stm32f4xx_it.c" lastModified="148249ef3f0"/>
+      <target file="stm32f4xx_it.o" lastModified="157861678bf">
+         <source file="..\..\..\stm32f4xx_it.c" lastModified="157861600c1"/>
       </target>
-      <target file="stm32f4xx_hash_md5.o" lastModified="1522ca76bca">
+      <target file="stm32f4xx_hash_md5.o" lastModified="15786167185">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_md5.c" lastModified="1334894f710"/>
       </target>
-      <target file="usb_core.o" lastModified="1522ca7646b">
-         <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_core.c" lastModified="150e2dbe000"/>
-      </target>
-      <target file="stm32f4xx_dbgmcu.o" lastModified="1522ca78ed4">
+      <target file="stm32f4xx_dbgmcu.o" lastModified="1578616a16f">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dbgmcu.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="1522ca76309">
-         <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.c" lastModified="1334894f710"/>
+      <target file="usb_core.o" lastModified="157861664db">
+         <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_core.c" lastModified="150e2dbe000"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="1522ca78461">
+      <target file="stm32f4xx_i2c.o" lastModified="1578616911f">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c" lastModified="1334894f710"/>
       </target>
-      <target file="stm32f4xx_hash.o" lastModified="1522ca766ca">
+      <target file="stm32f4xx_syscfg.o" lastModified="157861662a5">
+         <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.c" lastModified="1334894f710"/>
+      </target>
+      <target file="stm32f4xx_hash.o" lastModified="1578616686e">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash.c" lastModified="1334894f710"/>
       </target>
-      <target file="arm_fir_init_q7.o" lastModified="1522ca77951">
-         <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_init_q7.c" lastModified="1501e2c5fa0"/>
-      </target>
-      <target file="stm32f4xx_spi.o" lastModified="1522ca783a5">
+      <target file="stm32f4xx_spi.o" lastModified="15786168ff4">
          <source file="..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c" lastModified="1514dbcd1db"/>
       </target>
-      <target file="arm_fir_interpolate_init_f32.o" lastModified="1522ca78f2c">
+      <target file="arm_fir_init_q7.o" lastModified="15786168376">
+         <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_init_q7.c" lastModified="1501e2c5fa0"/>
+      </target>
+      <target file="arm_fir_interpolate_init_f32.o" lastModified="1578616a1eb">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_init_f32.c" lastModified="1501e2c5fa0"/>
       </target>
-      <target file="main.o" lastModified="1522ca76f5b">
-         <source file="..\..\..\main.c" lastModified="1522bf9a919"/>
+      <target file="main.o" lastModified="157861676a6">
+         <source file="..\..\..\main.c" lastModified="154808d5ec6"/>
       </target>
-      <target file="semihosting.o" lastModified="1522ca762b0">
-         <source file="..\..\..\semihosting\semihosting.c" lastModified="14825262d20"/>
+      <target file="system_stm32f4xx.o" lastModified="157861686d9">
+         <source file="..\..\..\system_stm32f4xx.c" lastModified="1547caec4a7"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1522ca77bac">
-         <source file="..\..\..\system_stm32f4xx.c" lastModified="1522c03c2fe"/>
-      </target>
-      <target file="usb_dcd_int.o" lastModified="1522ca77edf">
+      <target file="usb_dcd_int.o" lastModified="15786168c14">
          <source file="..\..\..\..\Libraries\STM32_USB_OTG_Driver\src\usb_dcd_int.c" lastModified="150f1f838e0"/>
       </target>
-      <target file="arm_fir_interpolate_init_q31.o" lastModified="1522ca76b50">
+      <target file="arm_fir_interpolate_init_q31.o" lastModified="157861670c5">
          <source file="..\..\..\..\Libraries\CMSIS\Source\FilteringFunctions\arm_fir_interpolate_init_q31.c" lastModified="1501e2c6770"/>
       </target>
-      <target file="stm32f4_discovery_lis302dl.o" lastModified="1522ca7883c">
+      <target file="stm32f4_discovery_lis302dl.o" lastModified="15786169705">
          <source file="..\..\..\..\Utilities\STM32F4-Discovery\stm32f4_discovery_lis302dl.c" lastModified="133489583b0"/>
+      </target>
+   </processor>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -g2 -Wall -O3 -c -DSTM32F407ZG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -DUSB_OTG_FS_CORE -DUSE_USB_OTG_FS -DUSE_OTG_MODE -D__FPU_USED -DARM_MATH_CM4 -D__VFP_FP__ -D__FPU_PRESENT -IH:\4bkup_branch\Libraries\CMSIS -IH:\4bkup_branch\my_audio_usb\semihosting -IH:\4bkup_branch\my_audio_usb -IH:\4bkup_branch\Libraries\CMSIS -IH:\4bkup_branch\Libraries\CMSIS\ST\STM32F4xx\Include -IH:\4bkup_branch\Libraries\STM32_USB_Device_Library\Class\audio\inc -IH:\4bkup_branch\Utilities\STM32F4-Discovery -IH:\4bkup_branch\Libraries\STM32_USB_OTG_Driver\inc -IH:\4bkup_branch\Libraries -IH:\4bkup_branch\Libraries\CMSIS\Include -IH:\4bkup_branch -IH:\4bkup_branch\Libraries\STM32F4xx_StdPeriph_Driver\inc -IH:\4bkup_branch\Libraries\CMSIS\Include -IH:\4bkup_branch\Libraries\STM32_USB_Device_Library\Core\inc">
+      <target file="sh_cmd.o" lastModified="15786083fa4">
+         <source file="..\..\..\semihosting\sh_cmd.s" lastModified="14825262d20"/>
+      </target>
+      <target file="semihosting.o" lastModified="15786081a51">
+         <source file="..\..\..\semihosting\semihosting.c" lastModified="14825262d20"/>
       </target>
    </processor>
 </history>

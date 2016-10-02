@@ -6,7 +6,6 @@
  ********************************************************************************/
 #include <stdio.h>
 #include <stdarg.h>
-#include "semihosting.h"
 
 /**
  * @brief  Transmit a char, if you want to use printf(), 
@@ -17,7 +16,7 @@
  */
 void PrintChar(char c)
 {
-	SH_SendChar(c);
+
 }
 
 /** Maximum string size allowed (in bytes). */

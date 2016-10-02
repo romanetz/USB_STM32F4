@@ -35,6 +35,12 @@
 <part id="14"/>
 <part id="15"/>
 <part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
 </presentation>
 </folder>
 </info>
@@ -79,9 +85,9 @@
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h" project="usb_audio"/>
 <editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="376447" selectionTopPixel="116808"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4_discovery_audio_codec.c" partName="stm32f4_discovery_audio_codec.c" path="C:/4/Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c" title="stm32f4_discovery_audio_codec.c" tooltip="C:/4/Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4_discovery_audio_codec.c" partName="stm32f4_discovery_audio_codec.c" path="C:/4bkup/Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c" title="stm32f4_discovery_audio_codec.c" tooltip="C:/4bkup/Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/board/stm32f4_discovery_audio_codec.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="44425" selectionTopPixel="28398"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="77413" selectionTopPixel="48318"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_tim.h" partName="stm32f4xx_tim.h" title="stm32f4xx_tim.h" tooltip="C:\4\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h" project="usb_audio"/>
@@ -91,9 +97,9 @@
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4\my_audio_usb\mpx.h" project="usb_audio"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="128616" selectionTopPixel="32495"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_audio_core.c" partName="usbd_audio_core.c" path="C:/4/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_core.c" title="usbd_audio_core.c" tooltip="C:/4/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_core.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_audio_core.c" partName="usbd_audio_core.c" path="C:/4bkup/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_core.c" title="usbd_audio_core.c" tooltip="C:/4bkup/Libraries/STM32_USB_Device_Library/Class/audio/src/usbd_audio_core.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/usb_audio/usbd_audio_core.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4410" selectionTopPixel="2694"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="25436" selectionTopPixel="13512"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4_discovery_audio_codec.h" partName="stm32f4_discovery_audio_codec.h" title="stm32f4_discovery_audio_codec.h" tooltip="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h" project="usb_audio"/>
@@ -103,6 +109,34 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/Library/stm32f4xx_spi.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15446" selectionTopPixel="7110"/>
 </editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/4bkup/my_audio_usb/main.c" title="main.c" tooltip="C:/4bkup/my_audio_usb/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3196" selectionTopPixel="1850"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="pllsynth.c" partName="pllsynth.c" path="C:/4bkup/my_audio_usb/pllsynth.c" title="pllsynth.c" tooltip="C:/4bkup/my_audio_usb/pllsynth.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/pllsynth.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6877" selectionTopPixel="4464"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpx.c" partName="mpx.c" path="C:/4bkup/my_audio_usb/mpx.c" title="mpx.c" tooltip="C:/4bkup/my_audio_usb/mpx.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/mpx.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3420" selectionTopPixel="1502"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="mpx.h" partName="mpx.h" title="mpx.h" tooltip="C:\4bkup\my_audio_usb\mpx.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4bkup\my_audio_usb\mpx.h" project="usb_audio"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="106327" selectionTopPixel="18797"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" partName="system_stm32f4xx.c" path="C:/4bkup/my_audio_usb/system_stm32f4xx.c" title="system_stm32f4xx.c" tooltip="C:/4bkup/my_audio_usb/system_stm32f4xx.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/system_stm32f4xx.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7517" selectionTopPixel="3390"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" partName="stm32f4xx.h" title="stm32f4xx.h" tooltip="C:\4bkup\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\4bkup\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h" project="usb_audio"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="376447" selectionTopPixel="116808"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_desc.c" partName="usbd_desc.c" path="C:/4bkup/my_audio_usb/usbd_desc.c" title="usbd_desc.c" tooltip="C:/4bkup/my_audio_usb/usbd_desc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usb_audio/usbd_desc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="2729"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
@@ -111,7 +145,15 @@
 </viewState>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0"/>
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
+<expanded>
+<element path="/usb_audio"/>
+<element path="/usb_audio/usb_audio"/>
+</expanded>
+<selection>
+<element path="/usb_audio/main.c"/>
+</selection>
+</viewState>
 </view>
 <view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting">
 <viewState/>
@@ -154,8 +196,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
+<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -225,8 +267,8 @@
 <hide_menu_item_id id="org.coocox.builder.rcp.flashMenu"/>
 <hide_menu_item_id id="org.coocox.builder.ui.debug"/>
 <hide_menu_item_id id="org.coocox.builder.ui.showHelpViewAction"/>
-<hide_menu_item_id id="org.coocox.builder.ui.showHelpViewAction1"/>
 <hide_menu_item_id id="org.coocox.builder.ui.newFile"/>
+<hide_menu_item_id id="org.coocox.builder.ui.showHelpViewAction1"/>
 <hide_menu_item_id id="org.coocox.builder.ui.actions.ConfigurationAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.builderDefaultLayout"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
@@ -247,8 +289,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
+<hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
 <view id="org.eclipse.debug.ui.RegisterView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
@@ -303,173 +345,166 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/board/stm32f4_discovery_audio_codec.c"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h" project="usb_audio"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/mpx.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/usb_core/usbd_core.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/usb_core/usbd_ioreq.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/syscalls/syscalls.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/usb_audio/usbd_audio_out_if.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/Library/stm32f4xx_spi.c"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\4\my_audio_usb\mpx.h" project="usb_audio"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/system_stm32f4xx.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/CMSIS/DSP/arm_fir_interpolate_f32.c"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\3\USB_STM32F4\Libraries\STM32_USB_Device_Library\Class\audio\inc\usbd_audio_core.h" project="usb_audio"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/system_stm32f4xx.c"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\4\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h" project="usb_audio"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/pllsynth.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/usb_audio/usbd_audio_core.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/usbd_desc.c"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h" project="usb_audio"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/mpx.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/board/stm32f4_discovery_audio_codec.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/pllsynth.c"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\4bkup\my_audio_usb\mpx.h" project="usb_audio"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/usb_audio/system_stm32f4xx.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3029" y="0"/>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="17935" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="64844" y="0"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="16237" y="15"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="16382" y="0"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="26521" y="10"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="28939" y="0"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="44168" y="0"/>
-</item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="17916" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3746" y="0"/>
+<position info="not_deleted" x="3676" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
+<item historyLabel="pllsynth.c" index="2">
+<position info="not_deleted" x="6916" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="7917" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="3676" y="0"/>
+</item>
+<item historyLabel="pllsynth.c" index="2">
+<position info="not_deleted" x="6916" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="7917" y="0"/>
+</item>
+<item historyLabel="usbd_audio_core.c" index="3">
+<position info="not_deleted" x="33181" y="0"/>
+</item>
+<item historyLabel="usbd_desc.c" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="stm32f4_discovery_audio_codec.h" index="5">
 <position info="not_deleted" x="4444" y="19"/>
 </item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="6131" y="0"/>
+<item historyLabel="usbd_audio_core.c" index="3">
+<position info="not_deleted" x="33181" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="3676" y="0"/>
 </item>
-<item historyLabel="usbd_core.c" index="4">
-<position info="not_deleted" x="9330" y="0"/>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="78000" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="80999" y="0"/>
 </item>
-<item historyLabel="usbd_ioreq.c" index="5">
-<position info="not_deleted" x="4548" y="0"/>
+<item historyLabel="usbd_audio_core.c" index="3">
+<position info="not_deleted" x="25436" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="3890" y="0"/>
 </item>
-<item historyLabel="syscalls.c" index="6">
-<position info="not_deleted" x="1235" y="0"/>
+<item historyLabel="pllsynth.c" index="8">
+<position info="not_deleted" x="6916" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="pllsynth.c" index="8">
+<position info="not_deleted" x="6877" y="0"/>
 </item>
-<item historyLabel="usbd_audio_out_if.c" index="7">
-<position info="not_deleted" x="5362" y="0"/>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="19070" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.h" index="2">
-<position info="not_deleted" x="4444" y="19"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="3676" y="0"/>
 </item>
-<item historyLabel="stm32f4_discovery_audio_codec.c" index="1">
-<position info="not_deleted" x="44425" y="0"/>
+<item historyLabel="pllsynth.c" index="8">
+<position info="not_deleted" x="6877" y="0"/>
 </item>
-<item historyLabel="stm32f4xx_spi.c" index="8">
-<position info="not_deleted" x="15446" y="0"/>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="18344" y="0"/>
 </item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="20025" y="0"/>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="80335" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="3676" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="3630" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="6596" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="17754" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="6596" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="15427" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="4817" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="2391" y="4"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="2364" y="0"/>
+</item>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="77413" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="77413" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="2391" y="4"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="4624" y="0"/>
+</item>
+<item historyLabel="stm32f4_discovery_audio_codec.c" index="7">
+<position info="not_deleted" x="77413" y="0"/>
+</item>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="2391" y="4"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="15456" y="0"/>
+</item>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="229" y="3"/>
 </item>
 <item historyLabel="mpx.h" index="9">
-<position/>
+<position info="not_deleted" x="106327" y="0"/>
 </item>
-<item historyLabel="mpx.h" index="9">
-<position info="not_deleted" x="128616" y="0"/>
+<item historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="19786" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="6352" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="188" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="18083" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="13422" y="8"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="18095" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="4324" y="8"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="14996" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="1808" y="4"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="18097" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="4324" y="8"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="2387" y="0"/>
 </item>
 <item historyLabel="system_stm32f4xx.c" index="10">
-<position info="not_deleted" x="7653" y="0"/>
+<position info="not_deleted" x="14692" y="0"/>
 </item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="19877" y="0"/>
+<item historyLabel="system_stm32f4xx.c" index="10">
+<position info="not_deleted" x="7517" y="0"/>
 </item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="18096" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="3">
-<position info="not_deleted" x="4324" y="8"/>
-</item>
-<item historyLabel="arm_fir_interpolate_f32.c" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="arm_fir_interpolate_f32.c" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="usbd_audio_core.h" index="12">
-<position info="not_deleted" x="1528" y="16"/>
-</item>
-<item historyLabel="system_stm32f4xx.c" index="13">
-<position info="not_deleted" x="7653" y="0"/>
-</item>
-<item historyLabel="stm32f4xx.h" index="14">
-<position info="not_deleted" x="51455" y="5"/>
-</item>
-<item historyLabel="stm32f4xx.h" index="14">
-<position info="not_deleted" x="376447" y="19"/>
-</item>
-<item historyLabel="system_stm32f4xx.c" index="13">
-<position info="not_deleted" x="14694" y="0"/>
-</item>
-<item historyLabel="pllsynth.c" index="15">
-<position info="not_deleted" x="6914" y="0"/>
-</item>
-<item historyLabel="main.c" index="16">
-<position info="not_deleted" x="6352" y="0"/>
-</item>
-<item historyLabel="mpx.c" index="17">
-<position info="not_deleted" x="17245" y="0"/>
-</item>
-<item active="true" historyLabel="mpx.c" index="17">
-<position/>
+<item active="true" historyLabel="mpx.c" index="1">
+<position info="not_deleted" x="19786" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -483,49 +518,51 @@
 <org.coocox.welcome.ui.WelcomePage/>
 </persistable>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_desc.c" tooltip="usb_audio/usbd_desc.c">
+<persistable path="/usb_audio/usbd_desc.c"/>
+</file>
 <file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
 <persistable>
 <org.coocox.welcome.ui.WelcomePage/>
 </persistable>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ps_demo.h" tooltip="D:\MCU_Projects\USB_STM32F4-master\my_audio_usb\ps_demo.h">
-<persistable path="D:\MCU_Projects\USB_STM32F4-master\my_audio_usb\ps_demo.h" project="usb_audio"/>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_spi.h" tooltip="D:\MCU_Projects\USB_STM32F4-master\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h">
-<persistable path="D:\MCU_Projects\USB_STM32F4-master\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h" project="usb_audio"/>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="C:\4bkup\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h">
+<persistable path="C:\4bkup\Libraries\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h" project="usb_audio"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="usb_audio/system_stm32f4xx.c">
 <persistable path="/usb_audio/system_stm32f4xx.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cm4.h" tooltip="usb_audio/CMSIS/core_cm4.h">
-<persistable path="/usb_audio/CMSIS/core_cm4.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="usb_audio/main.c">
-<persistable path="/usb_audio/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_dcd_int.c" tooltip="usb_audio/usb_core/usb_dcd_int.c">
-<persistable path="/usb_audio/usb_core/usb_dcd_int.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_it.c" tooltip="usb_audio/stm32f4xx_it.c">
-<persistable path="/usb_audio/stm32f4xx_it.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="arm_fir_interpolate_f32.c" tooltip="usb_audio/CMSIS/DSP/arm_fir_interpolate_f32.c">
-<persistable path="/usb_audio/CMSIS/DSP/arm_fir_interpolate_f32.c"/>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mpx.h" tooltip="C:\4bkup\my_audio_usb\mpx.h">
+<persistable path="C:\4bkup\my_audio_usb\mpx.h" project="usb_audio"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mpx.c" tooltip="usb_audio/mpx.c">
 <persistable path="/usb_audio/mpx.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_spi.c" tooltip="usb_audio/Library/stm32f4xx_spi.c">
-<persistable path="/usb_audio/Library/stm32f4xx_spi.c"/>
-</file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4_discovery_audio_codec.h" tooltip="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h">
-<persistable path="C:\4\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h" project="usb_audio"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pllsynth.c" tooltip="usb_audio/pllsynth.c">
 <persistable path="/usb_audio/pllsynth.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_spi.h" tooltip="C:\5\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h">
-<persistable path="C:\5\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h" project="usb_audio"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="usb_audio/main.c">
+<persistable path="/usb_audio/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup.S" tooltip="netlcd/startup.S">
+<persistable path="/netlcd/startup.S"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f2xx_rcc.c" tooltip="netlcd/spl/stm32f2xx_rcc.c">
+<persistable path="/netlcd/spl/stm32f2xx_rcc.c"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f2xx_rcc.h" tooltip="D:\MCU_Projects\NETLCD\netlcd\Libraries\STM32F2xx_StdPeriph_Driver\inc\stm32f2xx_rcc.h">
+<persistable path="D:\MCU_Projects\NETLCD\netlcd\Libraries\STM32F2xx_StdPeriph_Driver\inc\stm32f2xx_rcc.h" project="netlcd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f2xx_conf.h" tooltip="netlcd/stm32f2xx_conf.h">
+<persistable path="/netlcd/stm32f2xx_conf.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f2xx_gpio.c" tooltip="netlcd/spl/stm32f2xx_gpio.c">
+<persistable path="/netlcd/spl/stm32f2xx_gpio.c"/>
 </file>
 </mruList>
 </workbench>
